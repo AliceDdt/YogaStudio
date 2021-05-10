@@ -1,0 +1,56 @@
+            <section>
+                <h2>Inscription</h2>
+                <form id="form" action="user/register" class="form" method="POST">
+                    <fieldset>
+                        <legend>Identité</legend>
+                        <div class="field">
+                            <label for="lastName">Nom</label>
+                            <input name="lastName" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="firstName">Prénom</label>
+                            <input name="firstName" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input name="email" type="email" id="email" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="password">Mot de passe</label>
+                            <input name="password" type="password" id="password" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="password2">Confirmer le mot de passe</label>
+                            <input name="password2" type="password" id="password2" required aria-required="true">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Coordonnées</legend>
+                        <div class="field">
+                            <label for="address">Adresse</label>
+                            <input name="address" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">  
+                            <label for="address2">Complément d'adresse</label>
+                            <input name="address2" type="text" >
+                        </div> 
+                        <div class="field">
+                            <label for="zipcode">Code postal</label>
+                            <input name="zipcode" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="city">Ville</label>
+                            <input name="city" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="phone">Téléphone</label>
+                            <input name="phone" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <button type="submit" class="btn">Créer son compte</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <script type="module" src="assets/js/formvalidator.js"></script>
+            

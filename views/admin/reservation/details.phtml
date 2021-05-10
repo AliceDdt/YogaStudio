@@ -1,0 +1,33 @@
+            <div class="content__header">
+                <h2>Gestion des réservations</h2>
+            </div>
+            <section>
+                <h3>Détail de la réservation n° <?= intval($id) ?></h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Séance</th>
+                            <th>Date</th>
+                            <th>Heure</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($details as $item): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($item['Name']); ?></td>
+                            <td><?= htmlspecialchars($item['Date']); ?></td>
+                            <td><?= htmlspecialchars($item['Time']); ?></td>
+                            <td>
+                                <form action="reservation/deleteBooking" method="POST">
+                                <button type="submit"><i class="far fa-trash-alt"></i></button>
+                                <input type="hidden" name="yogaclass_id" value="<?= intval($item['Yogaclass_Id']); ?>">
+                                <input type="hidden" name="resa_id" value="<?= intval($item['Id']); ?>">
+                        </form>
+                            </td>           
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <a href="reservation" class="btn">Retour</a>
+            </section>

@@ -1,0 +1,31 @@
+
+            <section>
+                <h2>Planning des cours</h2>
+                <p>Retrouvez ici tous les cours réservables! </p>                
+                <?php foreach($yogaclass as $item): ?>
+                    <div class="yogaclass">
+                        <p><?= htmlspecialchars($item['Name']); ?></p>
+                        <p>par <?=htmlspecialchars($item['FirstName']); ?></p>
+                        <p><?= htmlspecialchars($item['Date']); ?></p>
+                        <p><?= htmlspecialchars($item['Time']); ?></p>
+                        <p><?= intval($item['Price']); ?> €</p>
+                            <?php if(intval($item['Nb_seats']) > 0 ): ?>
+                                <p><?= intval($item['Nb_seats']) ;?> place(s)restante(s)</p>
+                                <form class="form__resa" action="timetable/add" method="POST">
+                                    <button type="submit" class="btn btn__resa"
+                                            data-id="<?= intval($item['Id']); ?>"
+                                            data-name="<?= htmlspecialchars($item['Name']); ?> "
+                                            data-date =" <?= htmlspecialchars($item['Date']); ?>"
+                                            data-time= "<?= htmlspecialchars($item['Time']); ?>"
+                                            data-price="<?= intval($item['Price']); ?>">
+                                            Réserver
+                                    </button>
+                                    <input type="hidden" name="yogaclass_id" value="<?= intval($item['Id']); ?>">
+                                </form>
+                            <?php else: ?>
+                                <p>COMPLET</p>
+                            <?php endif;                        
+                        endforeach; ?>
+                    </div>
+            </section>
+        <script type="module" src="assets/js/booking.js"></script>

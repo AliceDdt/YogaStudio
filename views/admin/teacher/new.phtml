@@ -1,0 +1,61 @@
+            <div class="content__header">
+                <h2>Création d'un enseignant</h2>
+            </div>
+            <form enctype="multipart/form-data" action="teacher/create" method="POST">
+                <fieldset>
+                    <legend>Identité</legend>
+                    <div class="field">
+                        <div class="field">
+                            <label for="lastName">Nom</label>
+                            <input name="lastName" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="firstName">Prénom</label>
+                            <input name="firstName" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input name="email" type="email" required aria-required="true">
+                        </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Coordonnées</legend>
+                        <div class="field">
+                            <label for="address">Adresse</label>
+                            <input name="address" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">  
+                            <label for="address2">Complément d'adresse</label>
+                            <input name="address2"  type="text">
+                        </div> 
+                        <div class="field">
+                            <label for="zipcode">Code postal</label>
+                            <input name="zipcode" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="city">Ville</label>
+                            <input name="city" type="text" required aria-required="true">
+                        </div>
+                        <div class="field">
+                            <label for="phone">Téléphone</label>
+                            <input name="phone" type="text" required aria-required="true">
+                        </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Photo</legend>
+                    <div class="">
+                        <input type="file" class="" id="photo_teacher" name="photo_teacher" required aria-required="true">
+                        <label class="" for="photo_teacher" data-browse="Parcourir"></label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Biographie</legend>
+                    <div>
+                        <label for="bio"></label>
+                        <textarea name="bio" id="bio" cols="30" rows="10" required aria-required="true"></textarea>
+                    </div>
+                </fieldset>
+                <div class="field">
+                    <button class="btn" type="submit">Créer</button>
+                </div> 
+            </form>

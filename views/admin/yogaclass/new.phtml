@@ -1,0 +1,44 @@
+            <div class="content__header">
+                <h2>Création d'une séance</h2>
+            </div>
+                <form action="yogaclass/create" method="POST">
+                    <fieldset>
+                        <div class="field">
+                            <div class="field">
+                                <label for="yogaType">Type Yoga</label>
+                                <select name="yogaType" id="yogaType" required aria-required="true">
+                                    <?php foreach($courses as $item): ?>
+                                    <option value="<?= intval($item['Id']); ?>"><?= htmlspecialchars($item['Name']); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="teacher">Enseignants</label>
+                                <select name="teacher" id="teacher" required aria-required="true">
+                                    <?php foreach($teachers as $item): ?>
+                                    <option value="<?= intval($item['Id']); ?>"><?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="date">Date</label>
+                                <input name="date" type="date" required aria-required="true">
+                            </div>
+                            <div class="field">
+                                <label for="time">Heure</label>
+                                <input name="time" type="time" required aria-required="true">
+                            </div>
+                            <div class="field">
+                                <label for="seat">Places</label>
+                                <input name="seat" type="number" min="1" required aria-required="true">
+                            </div>
+                            <div class="field">
+                                <label for="price">Prix</label>
+                                <input name="price" type="number" min="1" max="50" required aria-required="true">
+                            </div>
+                    </fieldset>
+                    <div class="field">
+                        <button class="btn" type="submit">Créer</button>
+                    </div> 
+                </form>
+            </section>

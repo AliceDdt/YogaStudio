@@ -1,0 +1,34 @@
+
+        <header class="header">
+                <h1 class="header__title"><a href="home">Yoga Studio</a></h1>
+                <div class="btn-navbar">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="home/index">A propos</a></li>
+                        <li><a href="home/course">Cours</a></li>
+                        <li><a href="home/teacher">Enseignants</a></li>
+                        <li><a href="timetable">Planning</a></li>
+                    </ul>
+                </nav>
+                <a href="cart" id="cart" class ="icon icon--cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-total" class="icon--total">0</span>
+                </a>
+                <?php if(!isConnected()): ?>
+                    <a href="user" class="icon icon--user">
+                        <i class="fas fa-user"></i>
+                    </a>
+                <?php else: ?>
+                    <a href="user" class="icon icon--user">
+                    <i class="fas fa-child"></i>
+                    </a>
+                    <a href="user/logout">Deconnexion</i></a>
+                    <?php if(isAdmin()): ?>
+                        <a href="admin">Admin</i></a>
+                    <?php endif; ?>
+                <?php endif; ?>              
+        </header>

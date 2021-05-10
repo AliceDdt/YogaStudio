@@ -1,0 +1,47 @@
+            <section>
+                <h2>Modifier mes informations</h2>
+                <form action="user/update/<?=intval($_SESSION['user']['Id']); ?>" method="POST">
+                    <div class="field">
+                        <label for="lastName">Nom</label>
+                        <input name="lastName" type="text" value="<?= htmlspecialchars($profil['LastName']); ?>" required aria-required="true">
+                    </div>
+                    <div class="field">
+                        <label for="firstName">Prénom</label>
+                        <input name="firstName" type="text" value="<?= htmlspecialchars($profil['FirstName']); ?>"required aria-required="true">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" value="<?= htmlspecialchars($profil['Email']); ?>" required aria-required="true">
+                    </div>
+                    <div class="field">
+                        <label for="password">Mot de passe</label>
+                        <input name="password" type="password"  placeholder="Mot de passe" >
+                    </div>
+                    <div class="field">
+                        <label for="password2">Retaper le mot de passe</label>
+                        <input name="password2" type="password" placeholder="Re-saisir">
+                    </div>
+                    <div class="field">
+                        <label for="address">Adresse</label>
+                        <input name="address" type="text" value="<?= htmlspecialchars($profil['Address1']); ?>" required aria-required="true">
+                    </div>
+                    <div class="field">  
+                        <label for="address2">Complément d'adresse</label>
+                        <input name="address2" type="text" value="<?= htmlspecialchars($profil['Address2']); ?>">
+                    </div> 
+                    <div class="field">
+                        <label for="zipcode">Code postal</label>
+                        <input name="zipcode" type="text" value="<?= htmlspecialchars($profil['ZipCode']); ?>" required aria-required="true">
+                    </div>
+                    <div class="field">
+                        <label for="city">Ville</label>
+                        <input name="city" type="text" value="<?= htmlspecialchars($profil['City']); ?>" required aria-required="true">
+                    </div>
+                    <div class="field">
+                        <label for="phone">Téléphone</label>
+                        <input name="phone" type="text" value="<?= htmlspecialchars($profil['Phone']); ?>" required aria-required="true"> 
+                    </div>
+                    <button class="btn" type="submit">Valider</button>
+                    <a href="user/login" class="btn">Retour</a>
+                </form>
+            </section>

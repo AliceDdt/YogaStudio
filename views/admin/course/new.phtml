@@ -1,0 +1,26 @@
+<div class="content__header">
+                <h2>Création d'un type de yoga</h2>
+            </div>
+            <form action="course/create" method="POST">
+                <fieldset>
+                    <div class="field">
+                        <div class="field">
+                            <label for="name">Nom</label>
+                            <input name="name" type="text" required aria-required="true">
+                        </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Description</legend>
+                    <div>
+                        <label for="shortDescription">Description courte (page d'accueil)</label>
+                        <textarea name="shortDescription" id="shortDescription" cols="30" rows="2" required aria-required="true"></textarea>
+                    </div>
+                    <div>
+                        <label for="description">Description longue</label>
+                        <textarea name="description" id="description" cols="30" rows="10" required aria-required="true"></textarea>
+                    </div>
+                </fieldset>
+                <div class="field">
+                    <button type="submit" class="btn">Créer</button>
+                </div> 
+            </form>

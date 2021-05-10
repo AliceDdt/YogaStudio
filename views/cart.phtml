@@ -1,0 +1,27 @@
+    <section class="cart" >
+
+		<h2>Mon espace réservation</h2>
+		<?php if(empty($_SESSION['booking'])): ?>
+		<div id="cart-display">
+		</div>		
+		<div id="booking-form" class="hidden" >
+			<?php else: ?>
+				<form method="POST" action="cart/validate">
+					<?php foreach($yogaclass as $item): ?>
+					<ul>
+						<li><?= htmlspecialchars($item["Name"]); ?></li>
+						<li><?= htmlspecialchars($item['Date']); ?></li>
+						<li><?= htmlspecialchars($item['Time']); ?></li>
+						<li><?= intval($item['Price']); ?> €</li>
+						<li><a href = "cart/remove/<?= intval($item['Id']); ?>">Effacer</a></li>
+					</ul>
+					<?php endforeach; ?>
+			<?php endif; ?>
+				<form method="POST" action="cart/validate">
+					<input type="hidden" id="bookingCartJson" name="cart" />
+					<button type="submit" class="btn">Valider</button>
+				</form>
+		</div>
+	</section>
+
+	<script type="module" src="assets/js/cart.js"></script>

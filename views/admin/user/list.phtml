@@ -1,0 +1,28 @@
+            <div class="content__header">
+                <h2>Gestion des membres</h2>
+            </div>
+            <section>
+                <h3>Membres</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Email</th>
+                            <th>Créé</th>
+                            <th>Dernier login</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($users as $user): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($user['LastName']); ?></td>
+                            <td><?= htmlspecialchars($user['FirstName']); ?></td>
+                            <td><?= htmlspecialchars($user['Email']); ?></td>
+                            <td><?= htmlspecialchars($user['Created_at']); ?></td>
+                            <td><?= htmlspecialchars($user['Last_login']); ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </section>

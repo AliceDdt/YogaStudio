@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<?php require 'views/inc/head.phtml'; ?>
+
+<body>
+    <div class="container">
+<?php require 'views/inc/header.phtml' ?>
+        <main class="main-content">
+        <?php if (hasFlashes('error')): ?>
+            <div>
+                <?php foreach (getFlashes('error') as $message): ?>
+                <p><?=$message?></p>
+                <?php endforeach?>            
+            </div>
+        <?php endif?>
+        <?php if (hasFlashes('success')): ?>
+            <div>
+                <?php foreach (getFlashes('success') as $message): ?>
+                <p><?=$message?></p>
+                <?php endforeach?>
+            </div>
+        <?php endif?>
+            <?= $pageContent; ?>
+        </main>
+<?php require 'views/inc/footer.phtml' ?>
+    </div>
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

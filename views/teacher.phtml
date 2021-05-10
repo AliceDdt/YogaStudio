@@ -1,0 +1,15 @@
+            <section>
+                <h2>L'équipe du Yoga Studio</h2>
+                <?php foreach($teachers as $item): ?>
+                <article class="team__element">
+                    <div class="team__element">
+                        <h3><?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?></h3>
+                        <img src="uploads/<?= $item['Picture'];?>" alt="photo de marine Faye">
+                    </div>
+                    <div>
+                        <h4>Sa bio</h4>
+                        <p><?= $item['Description']; ?></p>
+                    </div>
+                </article>
+                <?php endforeach; ?>
+            </section>

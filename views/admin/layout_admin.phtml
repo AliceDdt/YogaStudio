@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php 
+require 'views/admin/inc_admin/head.phtml';
+?>
+<body>
+    <div class="container admin ">
+        <?php require 'views/admin/inc_admin/header.phtml'; ?>
+        <main class="main-content">
+        <?php if (hasFlashes('error')): ?>
+            <div>
+                <?php foreach (getFlashes('error') as $message): ?>
+                <p><?=$message?></p>
+                <?php endforeach?>            
+            </div>
+        <?php endif?>
+        <?php if (hasFlashes('success')): ?>
+            <div>
+                <?php foreach (getFlashes('success') as $message): ?>
+                <p><?=$message?></p>
+                <?php endforeach?>
+            </div>
+        <?php endif?>
+            <?= $pageContent; ?>
+        </main>
+    </div>
+    <script src="assets/js/main_admin.js"></script>
+</body>
+</html>

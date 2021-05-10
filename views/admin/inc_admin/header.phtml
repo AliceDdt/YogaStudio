@@ -1,0 +1,47 @@
+        <header class="header header__admin">
+                <h1 class="header__title"><a href="admin/index">Yoga Studio</a></h1>
+                <div class="btn-navbar">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div>
+                <?php if(isset($_SESSION['user'])): ?>
+                <p><i class="fas fa-user"></i>Hello <?= ucfirst($_SESSION['user']['FirstName']); ?></p>
+                <a href="user/logout">Deconnexion</a>
+                <?php endif; ?>
+                </div>
+                
+        </header>
+        <nav class="navbar navbar__admin">
+            <ul>
+                <li>
+                    <h4>Accueil</h4>
+                    <ul>
+                        <li><a href="admin/index">Tableau de bord</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Studio</h4>
+                    <ul>
+                        <li><a href="reservation">Réservations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Gestion</h4>
+                    <ul>
+                        <li><a href="yogaclass">Planning séances</a></li>
+                        <li><a href="course">Cours</a></li>
+                        <li><a href="teacher">Enseignants</a></li>
+                        <li><a href="member">Utilisateurs</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Site</h4>
+                    <ul>
+                        <li><a href="home/index">Yoga Studio</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>

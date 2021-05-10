@@ -1,0 +1,13 @@
+            <section>
+                <h2>Les cours</h2>
+                <?php foreach($courses as $item): ?>
+                <article>
+                    <h3><?= htmlspecialchars($item['Name']); ?></h3>
+                    <p><?= htmlspecialchars($item["Long_description"]); ?></p>
+                </article>
+                <?php endforeach; ?>
+                <div>
+                    <p>Envie de découvrir ? Alors réservez-vite votre cours </p>
+                    <a href="home/timetable" class="btn">Ici</a>
+                </div>
+            </section>

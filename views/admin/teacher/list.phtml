@@ -1,0 +1,27 @@
+            <div class="content__header">
+                <h2>Gestion des enseignants</h2>
+                <a class="btn--create" href="teacher/create">Créer</a>
+            </div>
+            <section>
+                <h3>Enseignants</h3>
+                <table class="table">
+                    <thead class="">
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Modifier</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($teachers as $teacher): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($teacher['LastName']); ?></td>
+                            <td><?= htmlspecialchars($teacher['FirstName']); ?></td>
+                            <td><a class="btn--edit" href="teacher/update/<?= intval($teacher['Id']); ?>"><i class="fas fa-edit"></i></a></td>
+                            <td><a class="btn--delete" href="teacher/deleteTeacher/<?= intval($teacher['Id']); ?>"><i class="far fa-trash-alt"></i></a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </section>
