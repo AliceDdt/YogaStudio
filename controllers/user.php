@@ -67,7 +67,7 @@ function login(){
         
         //if User is admin, redirect to Admin dashboard
         if(isAdmin()){
-            redirect('http://localhost/projet_mvc/admin');
+            redirect('http://localhost/yogaStudio/admin');
         }
         //else redirect to home index
         else{
@@ -132,7 +132,7 @@ function register(){
                     $pwd_encrypted);
 
         //redirect to login.php
-        redirect('http://localhost/projet_mvc/user');
+        redirect('http://localhost/yogaStudio/user');
     }
     //show template
     else {
@@ -145,7 +145,7 @@ function update($userId){
 
     //if user is not connected, redirect to login page
     if(!isset($_SESSION['user'])){
-        redirect('http://localhost/projet_mvc/user');
+        redirect('http://localhost/yogaStudio/user');
     }
     else{
         //update profil form processing
@@ -241,7 +241,7 @@ function logout(){
     session_destroy();
 
     //redirect to index
-    redirect('http://localhost/projet_mvc/home');
+    redirect('http://localhost/yogaStudio/home');
 }
 
 
@@ -262,7 +262,7 @@ function passwordValidation(string $password, string $password2):void
     // checking if the 2 passwords are identicals
     if($password != $password2) {
        addFlashMsg('error', 'les deux mots de passe ne correspondent pas');
-        redirectBack();
+    redirectBack();
     }
 }
 

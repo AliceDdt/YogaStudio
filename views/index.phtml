@@ -1,37 +1,49 @@
             <div class="background">
                 <div class="background__title">L'expérience au coeur du souffle</div>
-            </div>            
-            <section id="about" class="about">
+            </div>
+            <div class="arrow">
+                <div class="arrow__bar"></div>
+                <div class="arrow__bar2"></div>
+            </div>             
+            <section class="about">
                 <h2>Le studio</h2>
                 <p>Que vous n'ayez jamais posé un orteil sur un tapis de yoga ou que vous le dérouliez dès le réveil pour enchaîner les salutations au soleil, venez pratiquer dans une ambiance chaleureuse et lumineuse. Le studio est ouvert à tou.te.s et à tous les âges!</p>
                 <p>Les salles sont équipées de tout le matériel nécessaire et permettent également d'adapter les postures afin de respecter les limites de chacun.e (blocs, sangles de yoga, coussin de méditation, pads pour prendre soin des genoux etc.).</p>
-                <p>Encore une hésitation ? Alors venez nous voir au studio ou contactez-nous via le formulaire de contact! Nous serons ravi.e.s de vous répondre.</p>
+                <p>Encore une hésitation ? Alors venez nous voir au studio ou contactez-nous par email! Nous serons ravi.e.s de vous répondre.</p>
             </section>
-            <section id="courses" class="courses">
-                <h2>Quels yoga ?</h2>
+            <section class="courses">
+                <h2>Les yoga</h2>
                 <?php foreach($courses as $item): ?>
-                    <article>
+                <article>
                     <h3><?= htmlspecialchars($item['Name']); ?></h3>
                     <p><?= htmlspecialchars($item['Short_description']); ?></p>
                 </article>
                 <?php endforeach; ?>
-                <a href="home/course" class="btn">En savoir plus</a>
+                <div class="btn__container">
+                    <a href="home/course" class="btn">plus</a>
+                </div>
             </section>
-            <section id="teachers" class="team">
+            <section>
                 <h2>L'équipe</h2>
                 <div class="team">
                     <?php foreach($teachers as $item): ?>
                     <div class="team__element">
+                        <div>
                         <img src="uploads/<?= $item['Picture'];?>" alt="photo de <?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?>">
+                        </div>
                         <p><?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?></p>
                     </div>
                     <?php endforeach; ?> 
                 </div>
-                <a href="home/teacher" class="btn">Les connaître</a>  
+                <div class="btn__container">
+                    <a href="home/teacher" class="btn btn--team">Les connaître</a>
+                </div>  
             </section>
-            <div>
-                <a href="home/timetable" class="btn">Réserver</a>
-            </div>
-            
+            <section>
+                <h2>Envie d'essayer ?</h2>
+                <div class="btn__container">
+                    <a href="timetable" class="btn">Réserver</a>
+                </div>
+            </section>
                
             

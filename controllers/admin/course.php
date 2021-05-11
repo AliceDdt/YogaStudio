@@ -24,7 +24,7 @@ function create(){
         };
         
         //if $_POST is not empty, we insert the new course into database
-        $result = insertNewCourse($_POST['name'], $_POST['shortDescription'], $_POST['description']);
+        $result = insertNewCourse(strip_tags($_POST['name']), strip_tags($_POST['shortDescription']), strip_tags($_POST['description']));
 
         //if insertion is successful, display success message, else error message
         if($result){
@@ -59,15 +59,15 @@ function update($courseId){
 
         //if $_POST is not empty and correct, we proceed to update the course into the database
         else{
-            $result = updateCourse(intval($courseId), $_POST['name'],$_POST['shortDescription'], $_POST['description']);
+            $result = updateCourse(intval($courseId), strip_tags($_POST['name']),strip_tags($_POST['shortDescription']), strip_tags($_POST['description']));
             
             //if update is successful, display success message, else error message
             if($result){
                 addFlashMsg('success', 'Mise à jour effectuée');
-                redirect('http://localhost/projet_mvc/course');
+                redirect('http://localhost/yogaStudio/course');
             }else{
                 addFlashMsg('error', 'La mise à jour a échoué');
-                redirect('http://localhost/projet_mvc/course');
+                redirect('http://localhost/yogaStudio/course');
             }          
         }     
     }

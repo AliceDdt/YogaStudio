@@ -1,0 +1,46 @@
+/**********************************************************
+                        VARIABLES
+**********************************************************/
+:root{
+   
+    --font-body: 'Montserrat', sans-serif;
+    --font-headerTitle: 'Nothing You Could Do', cursive;
+
+    --size-body: 1.6rem;
+    --size-headerTitle-sm: 3rem;
+    --size-headerTitle-md: 4rem;
+    --size-icon: 2rem;
+   
+    --line-height: 2rem;
+    --letter-space-text: 0.1rem;
+
+    --backcolor-header:#ffff;
+    --backcolor-navbar: #c8dff7;
+    --backcolor-btnNav: #000000;
+
+    --backcolor-backTitle: rgba(255,255,255, 0.3);
+    --shadow-sm: 0 0 1em #707e8ba4;
+    --color-link: #000000;
+    --color-icon: #000000;
+}
+ --color-text-btn : #ffff;
+ --backcolor-btn: #6ea2bfc4
+
+--letter-space-btn: 0.4rem;
+--color-btn-hover: #6ea2bfc4
+--backcolor-btn-hover: white
+
+--color-disabled: grey
+--backcolor-disabled: rgba(128, 128, 128, 0.178);
+
+/********************************************************
+                            GENERAL
+*******************************************************/
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}

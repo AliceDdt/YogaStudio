@@ -29,7 +29,7 @@ function validate(){
     //if user not connected, redirect to login page
     if(!isConnected()){
         addFlashMsg('error', 'Veuillez vous connecter pour réserver');
-        redirect('http://localhost/projet_mvc/user');
+        redirect('http://localhost/yogaStudio/user');
     }
 
     //before proceeding to insertion, we need to verify if the user has already booked a yogaclass

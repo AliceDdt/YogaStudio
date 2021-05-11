@@ -1,10 +1,10 @@
 
         <header class="header">
                 <h1 class="header__title"><a href="home">Yoga Studio</a></h1>
-                <div class="btn-navbar">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                <div class="navbar__btn">
+                    <div class="btn__bar"></div>
+                    <div class="btn__bar"></div>
+                    <div class="btn__bar"></div>
                 </div>
                 <nav class="navbar">
                     <ul>
@@ -12,6 +12,13 @@
                         <li><a href="home/course">Cours</a></li>
                         <li><a href="home/teacher">Enseignants</a></li>
                         <li><a href="timetable">Planning</a></li>
+                        <li><a href="user">mon compte</a></li>
+                        <?php if(isConnected()): ?>
+                        <li><a href="admin">admin</a></li>
+                            <?php if(isAdmin()): ?>
+                        <li><a href="user/logout">deconnexion</a></li>
+                            <?php endif; ?>
+                        <?php endif; ?>
                     </ul>
                 </nav>
                 <a href="cart" id="cart" class ="icon icon--cart">
@@ -26,9 +33,9 @@
                     <a href="user" class="icon icon--user">
                     <i class="fas fa-child"></i>
                     </a>
-                    <a href="user/logout">Deconnexion</i></a>
+                    <a class="icon--logout" href="user/logout">Deconnexion</i></a>
                     <?php if(isAdmin()): ?>
-                        <a href="admin">Admin</i></a>
+                        <a class="icon--admin" href="admin">Admin</i></a>
                     <?php endif; ?>
                 <?php endif; ?>              
         </header>

@@ -132,11 +132,11 @@ function update($id){
         //if insertion is successful, display success message, else error message
         if($result){
             addFlashMsg('success', 'La séance a bien été mise à jour'); 
-            redirect('http://localhost/projet_mvc/yogaclass');
+            redirect('http://localhost/yogaStudio/yogaclass');
              
         }else{
             addFlashMsg('error', 'une erreur est survenue');
-            redirect('http://localhost/projet_mvc/yogaclass');
+            redirect('http://localhost/yogaStudio/yogaclass');
         } 
     }
     //show template with yogaclass info

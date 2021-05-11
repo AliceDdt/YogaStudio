@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     myBooking.restore();
     myBooking.setTotalCart();
 
-    const btnNav = document.querySelector('.btn-navbar');
+    const btnNav = document.querySelector('.navbar__btn');
     const navBar = document.querySelector('.navbar');
-    const main = document.querySelector('.main-content');
+    const main = document.querySelector('.main');
     
     btnNav.addEventListener('click', function () {
         

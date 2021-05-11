@@ -17,7 +17,7 @@ function add(){
     //if user is not connected, redirect to login page
     if(!isConnected()){
         addFlashMsg('error', 'Veuillez vous connecter pour réserver');
-        redirect('http://localhost/projet_mvc/user');
+        redirect('http://localhost/yogaStudio/user');
     }
     /*if user has clicked on 'Reserver' button, yogaclassId is stored into array $_SESSION['booking] */
     if(!empty($_POST)){

@@ -166,10 +166,10 @@ function update($userId){
         //if update is successful, display success message, else error message
         if($result){
             addFlashMsg('success', 'Mise à jour effectuée');
-            redirect('http://localhost/projet_mvc/teacher');
+            redirect('http://localhost/yogaStudio/teacher');
         }else{
             addFlashMsg('error', 'La mise à jour a échoué');
-            redirect('http://localhost/projet_mvc/teacher');
+            redirect('http://localhost/yogaStudio/teacher');
         }          
            
     }
