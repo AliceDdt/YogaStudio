@@ -12,20 +12,30 @@
                         <li><a href="home/course">Cours</a></li>
                         <li><a href="home/teacher">Enseignants</a></li>
                         <li><a href="timetable">Planning</a></li>
-                        <li><a href="user">mon compte</a></li>
-                        <?php if(isConnected()): ?>
-                        <li><a href="admin">admin</a></li>
+                        <?php if(!isConnected()): ?>
+                            <li class="laptop"><a href="user"><i class="fas fa-user"></i></a></li>
+                        <?php else: ?>
+                            <li class="laptop"><a href="user"><i class="fas fa-child"></i></a></li>
+                            <li class="laptop"><a href="user/logout"><i class="far fa-times-circle"></i></a></li>
                             <?php if(isAdmin()): ?>
-                        <li><a href="user/logout">deconnexion</a></li>
+                                <li class="laptop"><a href="admin">Admin</a></li>
+                            <?php endif; ?>
+                        <?php endif; ?>              
+                            <li><a href="user">mon compte</a></li>
+                        <?php if(isConnected()): ?>
+                            <li><a href="user/logout">deconnexion</a></li>
+                            <?php if(isAdmin()): ?>
+                            <li><a href="admin">admin</a></li>
+
                             <?php endif; ?>
                         <?php endif; ?>
                     </ul>
                 </nav>
-                <a href="cart" id="cart" class ="icon icon--cart">
+                <a href="cart" id="cart" class="icon icon--cart">
                     <i class="fas fa-shopping-cart"></i>
                     <span id="cart-total" class="icon--total">0</span>
                 </a>
-                <?php if(!isConnected()): ?>
+                <!--<?php if(!isConnected()): ?>
                     <a href="user" class="icon icon--user">
                         <i class="fas fa-user"></i>
                     </a>
@@ -33,9 +43,9 @@
                     <a href="user" class="icon icon--user">
                     <i class="fas fa-child"></i>
                     </a>
-                    <a class="icon--logout" href="user/logout">Deconnexion</i></a>
+                    <a class="icon--logout" href="user/logout">Deconnexion</a>
                     <?php if(isAdmin()): ?>
-                        <a class="icon--admin" href="admin">Admin</i></a>
+                        <a class="icon--admin" href="admin">Admin</a>
                     <?php endif; ?>
-                <?php endif; ?>              
+                <?php endif; ?>-->              
         </header>
