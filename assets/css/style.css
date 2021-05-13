@@ -176,6 +176,7 @@ img {
 @media only screen and (min-width: 1280px){
 
     .navbar__btn,
+    .navbar li:nth-child(7),
     .navbar li:nth-child(8),
     .navbar li:nth-child(9),
     .navbar li:last-child{
@@ -242,7 +243,12 @@ img {
     .icon{
         position: initial;
     }
-        
+    
+    .icon--cart{
+        margin-left: auto;
+        margin-right: 2rem;
+    }
+
     .icon--user{
         display: initial;
         top: 2em;
@@ -519,8 +525,9 @@ img {
 
 @media only screen and (min-width: 1280px){
 
-    .main{
-        margin: 0 auto;
+    .main section{
+        margin-left:30rem;
+        margin-right: 30rem;
     }
 }
 /*****************************************************************

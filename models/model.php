@@ -2,10 +2,10 @@
 //function connects to the database
 function dbConnexion(){
 
-    $host = 'mysql-alicedau.alwaysdata.net';
-    $dbName = 'alicedau_yogastudio';
-    $login = 'alicedau';
-    $password = 'Dreamfrog35!';
+    $host = 'mysql-alicedev.alwaysdata.net';
+    $dbName = 'alicedev_yogastudio';
+    $login = 'alicedev';
+    $password = 'jzF4R,24~';
     $connexion = False;
 
     if(!$connexion){

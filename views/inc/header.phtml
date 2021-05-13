@@ -13,10 +13,10 @@
                         <li><a href="home/teacher">Enseignants</a></li>
                         <li><a href="timetable">Planning</a></li>
                         <?php if(!isConnected()): ?>
-                            <li class="laptop"><a href="user"><i class="fas fa-user"></i></a></li>
+                            <li class="laptop icon"><a href="user"><i class="fas fa-user"></i></a></li>
                         <?php else: ?>
-                            <li class="laptop"><a href="user"><i class="fas fa-child"></i></a></li>
-                            <li class="laptop"><a href="user/logout"><i class="far fa-times-circle"></i></a></li>
+                            <li class="laptop icon"><a href="user"><i class="fas fa-child"></i></a></li>
+                            <li class="laptop icon"><a href="user/logout"><i class="far fa-times-circle"></i></a></li>
                             <?php if(isAdmin()): ?>
                                 <li class="laptop"><a href="admin">Admin</a></li>
                             <?php endif; ?>
