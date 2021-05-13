@@ -14,6 +14,7 @@
     --size-icon-md: 3rem;
 
     --size-title-2: 3rem;
+    --size-title-3: 2rem;
     --size-text-sm: 1.4rem;
     --size-backTitle-md: 2.2rem;
 
@@ -302,7 +303,7 @@ img {
     .background{
         background-image: url(../img/bg_header_lg.png);
         background-position: initial;
-        background-size: initial;
+        background-size: cover;
         height: 78vh;
     }
 }
@@ -337,10 +338,8 @@ img {
 }
 
 /**********************************************************
-                    MAIN
+                    MAIN SECTIONS
 **********************************************************/
-
-
 .main{
     font-size: var(--size-text-sm);
     letter-spacing: var(--letter-space-text);
@@ -352,21 +351,22 @@ img {
     text-align: justify;
 }
 
-.main section>h2::before,
-.main section>h2::after{
+.main section h2::before,
+.main section h2::after{
     content:".";
     padding: 0 2rem;
 }
 
 .main section h2{
     margin-bottom: 7rem;
+    line-height: initial;
     text-align: center;
     font-size: var(--size-title-2);
     transform: rotate(-10deg);
 }
 
 .main section h2,
-.team__element p{
+.team__element h3{
     font-family: var(--font-headerTitle);
 }
 
@@ -405,7 +405,7 @@ img {
     transform: rotate(-10deg);
 }
 
-.team__element p{
+.team__element h3{
     position: relative;
     right: 6rem;
     bottom: 2rem;
@@ -413,6 +413,27 @@ img {
     font-weight: bold;
 }
 
+
+/********* courses page ************/
+
+.main .courses__details>article{
+    margin: 7rem 2rem;
+}
+
+.main .courses__details h3{
+    font-family: var(--font-headerTitle);
+    font-size: var(--size-title-3);
+}
+
+/********** timetable page ***********/
+.yogaclass{
+    box-shadow: var(--shadow);
+    margin: 2rem;
+}
+.main .yogaclass>p{
+    margin: 0;
+   
+}
 
 
 @media only screen and (min-width: 768px){
@@ -450,6 +471,7 @@ img {
         grid-column-start: 2;
         grid-column-end: 4;
     }
+
     .about p+p{
         grid-column-start: 3;
         grid-column-end: 6;
@@ -463,42 +485,54 @@ img {
     }
 
     .courses{
-        display: grid;
-        grid-template-columns: 5% 30% 30% 30% 5%;
-        grid-template-rows: 100px 160px 160px 160px 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 800px;
     }
 
-    .courses h2{
-        grid-column-start: 3;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        align-items: end;
-    }
-
-    .courses article:first-of-type{
-        grid-column-start: 2;
-        grid-row-start: 2;
-    }
-    .courses article:nth-of-type(2){
-        grid-column-start: 3;
-        grid-row-start: 3;
-    }
-
-    .courses article:last-of-type{
-        grid-column-start: 4;
-        grid-row-start: 4;
-    }
-
+    .courses>h2, 
     .courses .btn__container{
-        grid-column-start: 3;
-        grid-row-start: 5;
+        width: 100%;
+        }
+
+    .courses article{
+        width:30%;
     }
-    .team__element p{
+   
+    .courses article:nth-of-type(2),
+    .courses article:nth-of-type(0n+5){
+        align-self: center;
+    }
+
+    .courses article:nth-of-type(3n){
+        align-self: flex-end;
+    }
+
+    .team__element h3{
         right: 10rem;
         bottom: 16rem;
     }
 
+    /******* courses page ******************/
+    .main .courses__details>article{
+        margin: 10rem;
+    }
+
+    .main .courses__details article p{
+        text-align: justify;
+    }
+    .main .courses__details div{
+        margin-top: 15rem;
+    }
+
+
+    /********** teacher page **********/
+
+    .team__element.team--description{
+        margin: 5rem 3rem;
+    }
+    
 }
 
 @media only screen and (min-width: 960px){
@@ -506,30 +540,70 @@ img {
     .main section{
         margin: 12rem;
     }
-/* 
-.about{
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
-    grid-template-rows: 30% 3fr;
-    grid-gap: 1rem;
-    justify-items: center;
-    align-items: center;
-}
-.about h2,
-.about p{
-    grid-column-start: 2;
-} */
+
+    /******* courses page *****************/
+    .main .courses__details h3{
+        font-size: var(--size-title-2);
+    }
+
+    .main .courses__details>article{
+        margin: 12rem 8rem;
+    }
 }
 
 @media only screen and (min-width: 1280px){
 
     .main section{
-        margin-left:30rem;
-        margin-right: 30rem;
+        margin-left: 35rem;
+        margin-right: 35rem;
     }
+
+    /******* courses page *********************/
+    .main .courses__details{
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+
+    .main .courses__details>article:nth-of-type(odd){
+        margin-left: 15rem;
+        margin-right: 55rem;
+    }
+
+    .main .courses__details>article:nth-of-type(even){
+        margin-left: 55rem;
+        margin-right: 15rem;
+    }
+
+    
+    /********** teacher page **********/
+
+    .team__element.team--description{
+        padding-top: 5rem;
+    }
+
+    article.team__element{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    article.team__element>div{
+        width:200px;
+        height:200px;
+        margin: 2rem;
+    }
+    
+    article.team__element>h3{
+        position: initial;
+        width:50%;
+    }
+
+    article.team__element.team--description p{
+       margin: 5rem;
+    }
+
 }
+
 /*****************************************************************
                 BUTTON
 *******************************************************************/
