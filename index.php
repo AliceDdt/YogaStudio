@@ -27,7 +27,7 @@ try{
             if(in_array($controller, $controllers['users']) ){           
                 require ROOT.'controllers/'.$controller.'.php';                        
             }
-            elseif(in_array($controller, $controllers['admin']) && isConnected() &&isAdmin()){
+            elseif(in_array($controller, $controllers['admin']) && isConnected() && isAdmin()){
                 require ROOT.'controllers/admin/'.$controller.'.php'; 
             }                    
             else{           
@@ -56,7 +56,13 @@ catch(Exception $e) { // S'il y a eu une erreur, alors...
     $code = $e->getCode();
     $message = $e->getMessage();
 
-    renderError($code, $message);
+    if(isConnected() && isAdmin()){
+        renderError($code, $message, 'admin/layout_admin');
+    }
+    else{
+        renderError($code, $message, 'layout');
+    }
+    
 }
 
  

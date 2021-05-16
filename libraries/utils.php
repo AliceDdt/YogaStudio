@@ -59,17 +59,21 @@ function renderPageAdmin(string $template, array $variables = []): void
     require('views/admin/layout_admin.phtml');
 }
 
-function renderError($code, $message)
+
+// render error page
+function renderError($code, $message, $layout)
 {
     ob_start();  
     require("views/errors.phtml");
     $pageContent = ob_get_clean();
     
-    require('views/layout.phtml');
+    require("views/$layout.phtml");
 
 }
 
-
+/* function adds error or success messages to variable $_SESSION['messages']
+@params string $type and string $message
+*/
 function addFlashMsg(string $type, string $message)
     {
         if (empty($_SESSION['messages'])) {
@@ -103,11 +107,18 @@ function getFlashes(string $type): array
     return $messages;
 }
 
+
+/*if user is connected
+@returns bool 
+*/
 function isConnected(): bool
 {
     return !empty($_SESSION['user']);
 }
 
+/*if user is admin
+@returns bool 
+*/
 function isAdmin(): bool
     {
         if($_SESSION['user']['Role']==3) {

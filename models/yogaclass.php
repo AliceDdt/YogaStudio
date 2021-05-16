@@ -48,7 +48,7 @@ function findClass(int $id)
 {
     $pdo = dbConnexion();
     $query = $pdo->prepare(
-        "SELECT Yogaclass.Id, DATE_FORMAT(Yogaclass.Date, '%d/%m/%Y') as Date, DATE_FORMAT(Yogaclass.Time, '%H:%i') as Time, Yogaclass.Number_participants, Yogaclass.Price, Course.Name, User.FirstName, User.LastName
+        "SELECT Yogaclass.Id, Yogaclass.Date, DATE_FORMAT(Yogaclass.Time, '%H:%i') as Time, Yogaclass.Number_participants, Yogaclass.Price, Course.Name, User.FirstName, User.LastName
         FROM Yogaclass
         INNER JOIN Course ON Course.Id = Yogaclass.Course_Id
         INNER JOIN User ON User.Id = Yogaclass.User_Id

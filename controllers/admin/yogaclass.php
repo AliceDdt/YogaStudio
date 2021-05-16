@@ -141,30 +141,51 @@ function update($id){
     }
     //show template with yogaclass info
     else{
-        $data = findClass($id);
-        $courses = findAllCourses();
-        $teachers = findAllTeachers();
-        
-        if(!$data){
-            addFlashMsg('error', 'Aucune séance trouvée');
+
+        //we verify if $id is numeric, else we throw exception
+        if(is_numeric($id)){
+            $data = findClass($id);
+            if(!$data){
+                addFlashMsg('error', 'Aucune séance trouvée');
+                redirect('http://localhost/yogaStudio/yogaclass');
+            }
+            else{
+                $courses = findAllCourses();
+                $teachers = findAllTeachers();
+                renderPageAdmin('yogaclass/edit', compact('data', 'courses', 'teachers'));
+            }
         }
         else{
-            renderPageAdmin('yogaclass/edit', compact('data', 'courses', 'teachers'));
+            throw new Exception("argument incorrect", 3);
         }
     }
 }
 
 //Delete yogaclass process
 function deleteClass($classId){
-    // proceed to delete the yogaclass from database
-    $result = delete($classId, 'Yogaclass');
-    
-    //if delete is successful, display success message, else error message
-    if($result){  
-        addFlashMsg('success', 'Séance supprimée!');
-        redirectBack();
+
+    if(is_numeric($classId)){
+
+        //first we verify that the yogaclass exists
+        $data = findClass($classId);
+        //if not we display an error message
+        if(!$data){
+            addFlashMsg('error', 'Aucune séance trouvée');
+            redirect('http://localhost/yogaStudio/yogaclass');
+        }
+        // else we proceed to delete the yogaclass from database
+        else{
+            $result = delete($classId, 'Yogaclass');
+            //if delete is successful, display success message, else error message
+            if($result){  
+                addFlashMsg('success', 'Séance supprimée!');
+                redirectBack();               
+            }else{
+                addFlashMsg('error', 'Erreur survenue');
+                redirectBack();
+            }
+        }
     }else{
-        addFlashMsg('error', 'La suppression n\'a pas été effectuée');
-        redirectBack();
+        throw new Exception("argument incorrect", 3);
     }
 }

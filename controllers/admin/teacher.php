@@ -175,35 +175,52 @@ function update($userId){
     }
     //show template
     else{
-        $teacher = findTeacher($userId);
-    
-        if(!$teacher){
-            addFlashMsg('error', 'Aucun prof trouvé');
-            redirectBack();
+        if(is_numeric($userId)){
+
+            $teacher = findTeacher($userId);
+        
+            if(!$teacher){
+                addFlashMsg('error', 'Aucun prof trouvé');
+                 redirect('http://localhost/yogaStudio/teacher');
+            }
+            else{
+                renderPageAdmin('teacher/edit', compact('teacher'));
+            }
         }
         else{
-            renderPageAdmin('teacher/edit', compact('teacher'));
+            throw new Exception("argument incorrect", 3);
         }
     }
 }
 
 //Delete teacher process
 function deleteTeacher($id){
-    $picture = findPicture($id);
-    //delete the previous picture from folder uploads
-    unlink('uploads/'.$picture['Picture']);
 
-    //delete teacher from database
-    $result = delete($id, 'User');
-    
-    //checking if deleting has worked, display success message, else error message
-    if($result){  
-        addFlashMsg('success', 'Prof supprimé!');
-        redirectBack();
+    if(is_numeric($id)){
+
+        $picture = findPicture($id);
+        if(!$picture){
+            addFlashMsg('error', 'Aucun prof trouvé');
+            redirect('http://localhost/yogaStudio/teacher');
+        }
+        //delete the previous picture from folder uploads
+        unlink('uploads/'.$picture['Picture']);
+
+        //delete teacher from database
+        $result = delete($id, 'User');
+        
+        //checking if deleting has worked, display success message, else error message
+        if($result){  
+            addFlashMsg('success', 'Prof supprimé!');
+            redirectBack();
+        }else{
+            addFlashMsg('error', 'La suppression n\'a pas été effectuée');
+            redirectBack();
+        }
     }else{
-        addFlashMsg('error', 'La suppression n\'a pas été effectuée');
-        redirectBack();
+        throw new Exception("argument incorrect", 3);
     }
+   
 
 }
 

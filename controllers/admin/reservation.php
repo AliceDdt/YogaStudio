@@ -17,13 +17,19 @@ function details($resaId){
     //we retrieve last parameter of url path to have the booking Id
     $id = basename($_GET['p']);
     
-    if(ctype_digit($id)){
+    if(is_numeric($resaId)){
         //we retrieve booking info with reservation Id
         $details = findDetailsReservation(intval($resaId));
-        renderPageAdmin('reservation/details', compact('id', 'details'));
+
+        if(empty($details)){
+            addFlashMsg('error', 'aucune réservation correspondante trouvée');
+            redirect('http://localhost/yogaStudio/reservation');
+        }
+        else{
+        renderPageAdmin('reservation/details', compact('id', 'details'));}
     }   
     else {
-        throw new \Exception('Impossible d\'afficher la page !', 4);
+        throw new Exception('Impossible d\'afficher la page !', 4);
     }
 }
 
@@ -44,9 +50,9 @@ function deleteBooking(){
         so we can proceed to deleting his/her entire reservation (table 'Reservation')*/
         if(!$booking){
             delete(intval($_POST['resa_id']), 'Reservation');
+            addFlashMsg('success', 'Suppression réussie');
+            redirect('http://localhost/yogaStudio/reservation');
         }
-        addFlashMsg('success', 'Suppression réussie');
-        redirect('index');
     }
     else{
         addFlashMsg('error', 'Echec de la suppression');

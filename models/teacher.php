@@ -112,9 +112,9 @@ function updatePicture(int $userId, string $filename): void
 /* 
 this function finds the filename of teacher's picture into table User
 @params int $userId
-return array
+@returns array|bool|null 
 */
-function findPicture(int $userId): array
+function findPicture(int $userId)
 {
     $pdo = dbConnexion();
     $query = $pdo->prepare(

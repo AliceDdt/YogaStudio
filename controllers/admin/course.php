@@ -72,31 +72,50 @@ function update($courseId){
         }     
     }
     else{
-        //show template whith course info
-        $course = findCourse($courseId);
+        if(is_numeric($courseId)){
+            //show template whith course info
+            $course = findCourse($courseId);
 
-        if(!$course){
-            addFlashMsg('error', 'Aucun cours trouvé !');
-            redirectBack();
+            if(!$course){
+                addFlashMsg('error', 'Aucun cours trouvé !');
+                redirect('http://localhost/yogaStudio/course');
+            }else{
+                renderPageAdmin('course/edit', compact('course'));
+            }
         }else{
-            renderPageAdmin('course/edit', compact('course'));
+            throw new Exception("argument incorrect", 3);
         }
     }
 }
 
 //Delete course process
 function deleteCourse($id){
-    // proceed to delete the course from database
-    $result = delete($id, 'Course');
 
-    //if delete is successful, display success message, else error message
-    if($result){
-        addFlashMsg('success', 'Cours supprimé!');
-        redirectBack();
+    if(is_numeric($id)){
 
+        //first we verify that the yogaclass exists
+        $data =  findCourse($id);
+        //if not we display an error message
+        if(!$data){
+            addFlashMsg('error', 'Aucune séance trouvée');
+            redirect('http://localhost/yogaStudio/yogaclass');
+        }
+        else{
+            // proceed to delete the course from database
+            $result = delete($id, 'Course');
+
+            //if delete is successful, display success message, else error message
+            if($result){
+                addFlashMsg('success', 'Cours supprimé!');
+                redirectBack();
+
+            }else{
+                addFlashMsg('error', 'Un problème est survenu, le cours n\'a pas été supprimé');
+                redirectBack();       
+            }
+        }
     }else{
-        addFlashMsg('error', 'Un problème est survenu, le cours n\'a pas été supprimé');
-        redirectBack();       
+        throw new Exception("argument incorrect", 3);
     }
 }
 

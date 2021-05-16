@@ -26,7 +26,7 @@ function dbConnexion(){
             $code = $error->getCode();
             $message = $error->getMessage();
            // echo "Erreur de connexion: ".$error->getMessage();
-           renderError($code, $message);
+           renderError($code, $message, 'layout');
         }
     }
 }
