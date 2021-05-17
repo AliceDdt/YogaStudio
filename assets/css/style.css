@@ -27,6 +27,8 @@
     --backcolor-footer: linear-gradient(119deg, #dbe4ee 0%, #c5d7e8 19%, #c3d9e8 46%, #c9deee 69%, #d9e6ea 87%, #cee7e8 100%);
 
     --backcolor-btn: #6ea2bfc4;
+    --backcolor-card: linear-gradient(62deg, #9bc9f8 0%, #e2caf8 100%);
+    
     
     --color-btn-hover: #6ea2bfc4;
     --backcolor-btn-hover: #ffff;
@@ -35,6 +37,7 @@
     --color-text-btn : #ffff;
     
     --shadow: 0 0 1em #707e8ba4;
+    --shadow-card: 0 0 1em #5a89b6a4;
 
     --color-disabled: #808080;
     --backcolor-disabled: rgba(128, 128, 128, 0.178);
@@ -426,15 +429,26 @@ img {
 }
 
 /********** timetable page ***********/
-.yogaclass{
-    box-shadow: var(--shadow);
-    margin: 2rem;
-}
-.main .yogaclass>p{
-    margin: 0;
-   
+.yogaclass__card{
+    width: 70%;
+    margin: 4rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    background: var(--backcolor-card)
 }
 
+.main .yogaclass__card>p{
+    margin: 0;
+}
+
+.main .yogaclass__card>p:first-of-type{
+    font-weight: bold;
+}
+
+.main .yogaclass__card>p:last-of-type{
+    margin-bottom: 1rem;
+}
 
 @media only screen and (min-width: 768px){
     .main{
@@ -484,28 +498,23 @@ img {
         grid-row-start: 4;
     }
 
-    .courses{
+    .courses__article{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        height: 800px;
+        height: 400px;
     }
 
-    .courses>h2, 
-    .courses .btn__container{
-        width: 100%;
-        }
-
-    .courses article{
+    .courses__article article{
         width:30%;
     }
    
-    .courses article:nth-of-type(2),
-    .courses article:nth-of-type(0n+5){
+    .courses__article article:nth-of-type(2),
+    .courses__article article:nth-of-type(0n+5){
         align-self: center;
     }
 
-    .courses article:nth-of-type(3n){
+    .courses__article article:nth-of-type(3n){
         align-self: flex-end;
     }
 
@@ -533,6 +542,28 @@ img {
         margin: 5rem 3rem;
     }
     
+/********** timetable page ***********/
+    .main .yogaclass{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        margin: 4rem auto;
+    }
+
+    .yogaclass>h2,
+    .yogaclass>p{
+        width:100%;
+        text-align: center;
+    }
+
+    .yogaclass__card{
+        width: 45%;
+        margin: 4rem 1rem;
+    }
+
+
 }
 
 @media only screen and (min-width: 960px){
@@ -548,6 +579,16 @@ img {
 
     .main .courses__details>article{
         margin: 12rem 8rem;
+    }
+}
+
+
+@media only screen and (min-width: 1024px){
+
+    /**** timetable page *****/
+    .yogaclass__card {
+        width: 30%;
+        margin: 4rem;
     }
 }
 
@@ -602,6 +643,11 @@ img {
        margin: 5rem;
     }
 
+    /***** timetable page ****/
+    .yogaclass__card {
+        width: 25%;
+    }
+
 }
 
 /*****************************************************************
@@ -644,8 +690,7 @@ img {
 }
 
 /****************************************************************************************************************
-FOOTER
-
+                                FOOTER
 *************************************************************************************************************/
 
 .footer{

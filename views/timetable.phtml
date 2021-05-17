@@ -1,9 +1,8 @@
-
-            <section>
+            <section class="yogaclass">
                 <h2>Planning des cours</h2>
                 <p>Retrouvez ici tous les cours réservables! </p>                
                 <?php foreach($yogaclass as $item): ?>
-                    <div class="yogaclass">
+                    <div class="yogaclass__card">
                         <p><?= htmlspecialchars($item['Name']); ?></p>
                         <p>par <?=htmlspecialchars($item['FirstName']); ?></p>
                         <p><?= htmlspecialchars($item['Date']); ?></p>

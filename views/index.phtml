@@ -13,12 +13,14 @@
             </section>
             <section class="courses">
                 <h2>Les yoga</h2>
-                <?php foreach($courses as $item): ?>
-                <article>
-                    <h3><?= htmlspecialchars($item['Name']); ?></h3>
-                    <p><?= htmlspecialchars($item['Short_description']); ?></p>
-                </article>
-                <?php endforeach; ?>
+                <div  class="courses__article">
+                    <?php foreach($courses as $item): ?>
+                    <article>
+                        <h3><?= htmlspecialchars($item['Name']); ?></h3>
+                        <p><?= htmlspecialchars($item['Short_description']); ?></p>
+                    </article>
+                    <?php endforeach; ?>
+                </div>
                 <div class="btn__container">
                     <a href="home/course" class="btn">plus</a>
                 </div>
