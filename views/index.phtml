@@ -13,7 +13,7 @@
             </section>
             <section class="courses">
                 <h2>Les yoga</h2>
-                <div  class="courses__article">
+                <div class="courses__article">
                     <?php foreach($courses as $item): ?>
                     <article>
                         <h3><?= htmlspecialchars($item['Name']); ?></h3>
@@ -30,8 +30,10 @@
                 <div class="team">
                     <?php foreach($teachers as $item): ?>
                     <div class="team__element">
-                        <div>
-                        <img src="uploads/<?= $item['Picture'];?>" alt="photo de <?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?>">
+                        <div class="team__picture">
+                            <div>
+                            <img src="uploads/<?= $item['Picture'];?>" alt="photo de <?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?>">
+                            </div>
                         </div>
                         <h3><?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?></h3>
                     </div>

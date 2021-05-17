@@ -1,6 +1,6 @@
-            <section>
+            <section class="account">
                 <h2>Mon compte</h2>
-                <div>
+                <div class="account__card">
                     <h3>Mes informations</h3>
                     <div>
                         <p><?= $_SESSION['user']['FirstName']; ?> <?= $_SESSION['user']['LastName']; ?></p>
@@ -11,25 +11,25 @@
                         <p><?= $userInfos['ZipCode']; ?></p>
                         <p><?= $userInfos['City']; ?></p>
                         <p><?= $_SESSION['user']['Email']; ?></p>
-                        <a href="user/update/<?= intval($_SESSION['user']['Id']);?>" class="btn">Modifier mes infos</a>
+                        <a href="user/update/<?= intval($_SESSION['user']['Id']);?>" class="btn">Modifier</a>
                     </div>
                 </div>
-                <div>
-                <?php if(!$userBooking): ?>
+                <div class="account__card">
                     <h3>Réservations</h3>
+                <?php if(!$userBooking): ?>
                         <p>Vous n'avez fait aucune réservation!</p>
                     <?php endif; ?>
                 <?php if($userBooking): ?>
-                    <?php foreach($bookingDetails as $item): ?>   
                         <table>
                             <thead>
-                                <th>N°Resa</th>
+                                <th>N°</th>
                                 <th>Cours</th>
                                 <th>Date</th>
                                 <th>Horaire</th>
                                 <th>Prix</th>
                             </thead>
-                            <tbody>                  
+                            <tbody>
+                            <?php foreach($bookingDetails as $item): ?>                    
                                 <tr>
                                     <td><?= intval($item['Reservation_Id']); ?> </td>
                                     <td><?= htmlspecialchars($item['Name']); ?></td>
@@ -37,9 +37,9 @@
                                     <td><?= htmlspecialchars($item['Time']); ?></td>
                                     <td><?= intval($item['Price']); ?> €</td>
                                 </tr>
+                            <?php endforeach; ?>
                             <tbody>
-                        </table>                
-                    <?php endforeach; ?>
+                        </table>                                  
                     <p>Si vous souhaitez annuler une réservation, envoyez-nous un email à yogastudio@gmail.com</p>
                     <?php endif ;?>           
                 </div>

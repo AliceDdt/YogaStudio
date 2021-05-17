@@ -1,6 +1,6 @@
             <section>
                 <h2>Modifier mes informations</h2>
-                <form action="user/update/<?=intval($_SESSION['user']['Id']); ?>" method="POST">
+                <form id="form" class="form" action="user/update/<?=intval($_SESSION['user']['Id']); ?>" method="POST">
                     <div class="field">
                         <label for="lastName">Nom</label>
                         <input name="lastName" type="text" value="<?= htmlspecialchars($profil['LastName']); ?>" required aria-required="true">
@@ -11,15 +11,15 @@
                     </div>
                     <div class="field">
                         <label for="email">Email</label>
-                        <input name="email" type="email" value="<?= htmlspecialchars($profil['Email']); ?>" required aria-required="true">
+                        <input name="email" type="email" id="email" value="<?= htmlspecialchars($profil['Email']); ?>" required aria-required="true">
                     </div>
                     <div class="field">
                         <label for="password">Mot de passe</label>
-                        <input name="password" type="password"  placeholder="Mot de passe" >
+                        <input name="password" type="password" id="password" placeholder="Mot de passe" >
                     </div>
                     <div class="field">
-                        <label for="password2">Retaper le mot de passe</label>
-                        <input name="password2" type="password" placeholder="Re-saisir">
+                        <label for="password2">Confirmer le mot de passe</label>
+                        <input name="password2" type="password" id="password2" placeholder="Re-saisir">
                     </div>
                     <div class="field">
                         <label for="address">Adresse</label>
@@ -41,7 +41,10 @@
                         <label for="phone">Téléphone</label>
                         <input name="phone" type="text" value="<?= htmlspecialchars($profil['Phone']); ?>" required aria-required="true"> 
                     </div>
+                    <div>
                     <button class="btn" type="submit">Valider</button>
-                    <a href="user/login" class="btn">Retour</a>
+                    <a href="user" class="btn">Retour</a>
+                    </div>
                 </form>
             </section>
+            <script type="module" src="assets/js/formvalidator.js"></script>

@@ -108,12 +108,7 @@ class BookingCart {
     showCart(){
         this.setTotalCart();
         let content = '';
-        
-        content +=`<table class="table">
-                    <tbody>`
-        
-        //'<ul>';
-        
+
         if(this.bookingCart.length == 0){
             content+='<p>Vous n\'avez aucune réservation en cours !</p>';
             this.form.classList.add("hidden");
@@ -121,33 +116,22 @@ class BookingCart {
 
         else{
             
-        this.form.classList.remove("hidden");
-        this.bookingCart.forEach(function(booking, i){
-            
-            content+=
-                `<tr>
-                    <td>${booking.name}</td>
-                    <td>${booking.date}</td>
-                    <td>${booking.time}</td>
-                    <td>${booking.price} €</td>
-                </tr>
-                <tr>
-                    <td><button type="button" class="remove" data-id=${i}>supprimer</button></td>
-                </tr>`;
-            
+            this.form.classList.remove("hidden");
+            this.bookingCart.forEach(function(booking, i){
+                
+                content+=
+                    `<div class="cart__booking">
+                        <div>
+                            <p>${booking.name}</p>
+                            <p>${booking.date}</p>
+                            <p>${booking.time}</p>
+                            <p>${booking.price} €</p>
+                        </div>
+                    <button type="button" class="btn--remove remove" data-id=${i}>supprimer</button>
+                    </div>`;
+            })
 
-        //     `<li><span>${booking.name}</span>
-        //      <span>${booking.date}</span>
-        //      <span>${booking.time}</span>
-        //      <span>${booking.price} €</span>
-        //  <button type="button" class="remove" data-id=${i}>supprimer</button></li>`
-        })
-
-        content+='</tbody></table>'
-        //'</ul>'
-
-        
-        this.input.setAttribute('value', JSON.stringify(this.bookingCart) )
+            this.input.setAttribute('value', JSON.stringify(this.bookingCart));
         }
         
         this.cart.innerHTML = content;

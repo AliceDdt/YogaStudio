@@ -2,9 +2,11 @@
                 <h2>L'équipe du Yoga Studio</h2>
                 <?php foreach($teachers as $item): ?>
                 <article class="team__element team--description">
+                    <div class="team__picture">
                     <div>
                         <img src="uploads/<?= $item['Picture'];?>" alt="photo de <?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?>">
                     </div>
+                </div>
                     <h3><?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?></h3>
                     <p><?= $item['Description']; ?></p>
                 </article>

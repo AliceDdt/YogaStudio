@@ -7,21 +7,24 @@
     --font-body: 'Montserrat', sans-serif;
     --font-headerTitle: 'Nothing You Could Do', cursive;
 
+    --size-text-sm: 1.4rem;
     --size-text-md: 1.6rem;
     --size-headerTitle-sm: 3rem;
     --size-headerTitle-md: 4rem;
     --size-icon-sm: 2rem;
     --size-icon-md: 3rem;
-
     --size-title-2: 3rem;
     --size-title-3: 2rem;
-    --size-text-sm: 1.4rem;
+
+    --size-form-error-sm: 1rem;
+    --size-form-error-md: 1.2rem;
     --size-backTitle-md: 2.2rem;
 
     --line-height: 2rem;
     --letter-space-text: 0.1rem;
     --letter-space-btn: 0.4rem;
-    --backcolor-header:#ffff;
+
+    --backcolor-main:#ffff;
     --backcolor-navbar: #c8dff7;
     --backcolor-btnNav: #000000;
     --backcolor-footer: linear-gradient(119deg, #dbe4ee 0%, #c5d7e8 19%, #c3d9e8 46%, #c9deee 69%, #d9e6ea 87%, #cee7e8 100%);
@@ -29,16 +32,25 @@
     --backcolor-btn: #6ea2bfc4;
     --backcolor-card: linear-gradient(62deg, #9bc9f8 0%, #e2caf8 100%);
     
+    --border-input: 1px solid rgb(212, 212, 212);
+    --border-input-focus: rgba(10, 87, 92, 0.425);
+
+    --backcolor-input-error: rgb(235, 173, 173);
+    --border-input-error: 1px solid rgb(240, 137, 137);
     
     --color-btn-hover: #6ea2bfc4;
     --backcolor-btn-hover: #ffff;
+
+
+    --border-btn-remove: 1px solid rgb(168, 164, 164);
     --color-link: #000000;
     --color-icon: #000000;
     --color-text-btn : #ffff;
+    --color-form-error: #f72929;
     
     --shadow: 0 0 1em #707e8ba4;
-    --shadow-card: 0 0 1em #5a89b6a4;
-
+    --shadow-card: 1px 2px 10px #5a89b6a4;
+    
     --color-disabled: #808080;
     --backcolor-disabled: rgba(128, 128, 128, 0.178);
 }
@@ -59,6 +71,7 @@ html{
 body{
     font-family: var(--font-body);
     font-size: var(--size-text-md);
+    background-color: var(--backcolor-main);
 }
 
 a{
@@ -86,8 +99,8 @@ img {
     position: sticky;
     top: 0;
     z-index: 150;
-    background-color: var(--backcolor-header);
     box-shadow: var(--shadow);
+    background-color: var(--backcolor-main);
 }
 
 .header__title{
@@ -350,7 +363,7 @@ img {
 }
 
 .main section{
-    margin: 10rem 0;
+    margin: 10rem auto;
     text-align: justify;
 }
 
@@ -382,7 +395,8 @@ img {
     text-align: center;
 }
 
-.main section p{
+.about p, 
+.courses p{
     margin: 3rem;
 }
 
@@ -390,7 +404,7 @@ img {
     padding: 3rem 0;
 }
 
-.team__element div{
+.team__element .team__picture div{
     position: relative;
     z-index:-10;
     margin: 4rem 8rem;
@@ -428,12 +442,28 @@ img {
     font-size: var(--size-title-3);
 }
 
-/********** timetable page ***********/
-.yogaclass__card{
-    width: 70%;
+.courses__details p{
+    margin: 3rem;
+}
+
+/********** timetable page /account page /cart page***********/
+.yogaclass p {
+    text-align: center;
+}
+
+.yogaclass__card, 
+.account__card,
+.cart__booking{
     margin: 4rem auto;
     padding: 2rem;
     border-radius: 10px;
+}
+
+.yogaclass__card{
+    width: 70%;
+}
+
+.yogaclass__card{
     box-shadow: var(--shadow-card);
     background: var(--backcolor-card)
 }
@@ -450,6 +480,49 @@ img {
     margin-bottom: 1rem;
 }
 
+.account__card,
+.cart__booking{
+    width: 80%; 
+    box-shadow: var(--shadow-card);    
+}
+
+.account__card h3{
+    font-family: var(--font-headerTitle);
+}
+
+.account__card p:last-of-type{
+    margin-bottom: 4rem;
+}
+
+.account__card table{
+    width: 100%;
+}
+
+.account__card td{
+    height: 80px;
+    padding: 0 0.2rem;
+}
+
+.account__card th:last-of-type, 
+.account__card td:last-of-type{
+    display: none;
+}
+
+/******** cart page ********/
+.cart__booking{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart__booking p {
+    text-align: left;
+}
+
+.cart__booking div:last-of-type{
+    margin-bottom: 5rem;
+}
+
 @media only screen and (min-width: 768px){
     .main{
         font-size: var(--size-text-md);
@@ -463,14 +536,12 @@ img {
         font-size: calc(var(--size-title-2) * 1.5);
     }
 
-    .main section p{
+    .about p{
         margin: 5rem;
     }
 
-    .main section article,
-    .main section article>p{
+    .courses p{
         margin: 1rem;
-        text-align: center;
     }
 
     .about{
@@ -539,10 +610,37 @@ img {
     /********** teacher page **********/
 
     .team__element.team--description{
-        margin: 5rem 3rem;
+        padding-top: 5rem;
+        margin: 10rem;
+    }
+
+    article.team__element{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    article.team__element div{
+        width:200px;
+        height:200px;
+        margin: 2rem;
     }
     
-/********** timetable page ***********/
+    article.team__element>h3{
+        position: initial;
+        width: 45%;
+        justify-self: start;
+    }
+
+    article.team__element.team--description p{
+       margin: 5rem;
+    }
+    article.team__element.team--description .team__picture div{
+        margin:0;
+    }
+    
+    /********** timetable page ***********/
     .main .yogaclass{
         display: flex;
         flex-wrap: wrap;
@@ -563,6 +661,11 @@ img {
         margin: 4rem 1rem;
     }
 
+    /********* account page ***********/
+    .account__card th:last-of-type, 
+    .account__card td:last-of-type{
+        display: table-cell;
+    }
 
 }
 
@@ -590,6 +693,10 @@ img {
         width: 30%;
         margin: 4rem;
     }
+
+    .account__card h3{
+        font-size: var(--size-title-2);
+    }
 }
 
 @media only screen and (min-width: 1280px){
@@ -597,6 +704,10 @@ img {
     .main section{
         margin-left: 35rem;
         margin-right: 35rem;
+    }
+
+    .about p{
+        margin: 1rem;
     }
 
     /******* courses page *********************/
@@ -615,32 +726,9 @@ img {
         margin-right: 15rem;
     }
 
-    
     /********** teacher page **********/
-
     .team__element.team--description{
-        padding-top: 5rem;
-    }
-
-    article.team__element{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    article.team__element>div{
-        width:200px;
-        height:200px;
-        margin: 2rem;
-    }
-    
-    article.team__element>h3{
-        position: initial;
-        width:50%;
-    }
-
-    article.team__element.team--description p{
-       margin: 5rem;
+        margin: 10rem auto;
     }
 
     /***** timetable page ****/
@@ -666,7 +754,7 @@ img {
     letter-spacing: var(--letter-space-btn);
     background-color: var(--backcolor-btn);
     border-radius: 2rem;
-    border: none;
+    border: 0.1rem solid  var(--backcolor-btn);
     cursor: pointer;
 }
 
@@ -674,7 +762,6 @@ img {
     color: var(--color-btn-hover);
     font-weight: bold;
     background-color: var(--backcolor-btn-hover);
-    border:1.5px solid var(--color-btn-hover);
 }
 
 .disabled,
@@ -687,6 +774,14 @@ img {
 .btn--team{
     position: relative;
     bottom: 4rem;
+}
+
+.btn--remove{
+    padding: 0.5em 1em;
+    border: var(--border-btn-remove);
+    background-color: var(--backcolor-main);
+    border-radius: 2rem;
+    cursor: pointer;
 }
 
 /****************************************************************************************************************
@@ -777,17 +872,10 @@ img {
     .footer__contact div:last-of-type{
        align-self: flex-end;
     }
-
+}
 /***************************************************************
 
-
-
 ****************************************************************/
-
-.timetable div{
-    display: flex;
-}
-
 .hidden{
     display: none; 
 }
@@ -807,37 +895,24 @@ img {
     margin: 0 auto;
 
 }
-.table button{
-    border: 1px solid rgb(168, 164, 164);
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 0.5em 1em;
-    cursor: pointer;
-}
-
-.table tbody{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.table tr{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 50%;
-    padding-left: 2em;
-    padding-bottom: 2em;
-}
-
-.table td:first-child{
-    text-align: left;
-}
 
 
 /*********************************************************************************************************
 FORM
 ****************************************************************************************************/
+.form{
+    margin: 4rem;
+}
+
+.form fieldset{
+    border: none;
+    margin: 0 auto;
+}
+
+.main .field{
+    text-align: left;
+    margin-bottom: 2rem;
+}
 
 label,
 input{
@@ -845,84 +920,56 @@ input{
 }
 
 input{
-    border-radius:0.2em;
-    border: 1px solid rgb(212, 212, 212);
     padding: 0.5em 1em;
-    font-size: 1.6rem;
-    color:rgb(8, 67, 71);
-
+    font-size: var(--size-text-md);
+    border-radius: 0.2em;
+    border: var(--border-input);
 }
 
 input:focus{
-    outline-color: rgba(10, 87, 92, 0.425);
+    outline-color: var(--border-input-focus);
 }
 
 .error-input{
-    
-    background-color: rgb(235, 173, 173);
-    border: 1px solid rgb(240, 137, 137);
+    background-color: var(--backcolor-input-error);
+    border: var(--border-input-error);
 }
 
 .form-error{
+    font-size: var(--size-form-error-sm);
     font-weight: bold;
-    font-size: 1rem;
-    color: rgb(247, 41, 41);
+    color: var(--color-form-error);
     line-height: normal;
     letter-spacing: normal;
 }
 
-@media only screen and (min-width: 768px) and (orientation: landscape) {
-
-    .table td{
-        padding: 1em 2em;
-
-    }
-    .table td:first-child{
-        text-align: left;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 1024px) {
-
-    .form-error{
-        font-size: 1.2rem;
-    }
-    .field{
-        text-align: left;
-        background-color: #fff;
-        margin: 1em 
-    }
+@media only screen and (min-width: 768px) {
     .form{
-        width:20%;
-        margin: 0 auto;
-        text-align: left;
+        width: 50%;
+        margin: 10rem auto;
     }
-    .form fieldset{
-        border: none;
-        margin: 0 auto;
-        
+
+    .form div:last-of-type{
+        margin-top:5rem;
     }
+
     label{
         margin-right: 2em;
     }
-    input{
 
-        width:100%;
+    input{
+        width: 100%;
     }
-}}
+}    
+
+@media only screen and (min-width: 1024px) {
+
+    .form{
+        width: 40%;
+    }
+
+    .form-error{
+        font-size: var(--size-form-error-md);
+    }
+
+}
