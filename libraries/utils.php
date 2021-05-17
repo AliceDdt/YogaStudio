@@ -71,7 +71,8 @@ function renderError($code, $message, $layout)
 
 }
 
-/* function adds error or success messages to variable $_SESSION['messages']
+/* 
+function adds error or success messages to variable $_SESSION['messages']
 @params string $type and string $message
 */
 function addFlashMsg(string $type, string $message)
@@ -85,6 +86,11 @@ function addFlashMsg(string $type, string $message)
         $_SESSION['messages'][$type][] = $message;
     }
 
+/* 
+function verify if $_SESSION['messages'] is empty or not
+@params string $type
+@returns bool
+*/
 function hasFlashes(string $type): bool
     {
         if (empty($_SESSION['messages'])) {
@@ -94,6 +100,11 @@ function hasFlashes(string $type): bool
         return !empty($_SESSION['messages'][$type]);
     }
 
+/* 
+function returns $_SESSION['messages']
+@params string $type
+@returns array
+*/
 function getFlashes(string $type): array
 {
     if (empty($_SESSION['messages'])) {
