@@ -364,7 +364,6 @@ img {
 
 .main section{
     margin: 10rem auto;
-    text-align: justify;
 }
 
 .main section h2::before,
@@ -399,6 +398,10 @@ img {
 .courses p{
     margin: 3rem;
 }
+.about p,
+.courses__details article p{
+    text-align: justify;
+}
 
 .team__element{
     padding: 3rem 0;
@@ -430,6 +433,11 @@ img {
     font-weight: bold;
 }
 
+article.team__element div{
+    width:200px;
+    height:200px;
+    margin-bottom: 5rem;
+}
 
 /********* courses page ************/
 
@@ -519,17 +527,13 @@ img {
     text-align: left;
 }
 
-.cart__booking div:last-of-type{
-    margin-bottom: 5rem;
-}
-
 @media only screen and (min-width: 768px){
     .main{
         font-size: var(--size-text-md);
     }
 
     .main section{
-        margin: 12rem 0;
+        width: 80%;
     }
 
     .main section h2{
@@ -636,6 +640,7 @@ img {
     article.team__element.team--description p{
        margin: 5rem;
     }
+
     article.team__element.team--description .team__picture div{
         margin:0;
     }
@@ -671,10 +676,6 @@ img {
 
 @media only screen and (min-width: 960px){
 
-    .main section{
-        margin: 12rem;
-    }
-
     /******* courses page *****************/
     .main .courses__details h3{
         font-size: var(--size-title-2);
@@ -687,6 +688,10 @@ img {
 
 
 @media only screen and (min-width: 1024px){
+    
+    .main section{
+        width: 70%;
+    }
 
     /**** timetable page *****/
     .yogaclass__card {
@@ -702,8 +707,7 @@ img {
 @media only screen and (min-width: 1280px){
 
     .main section{
-        margin-left: 35rem;
-        margin-right: 35rem;
+        width: 50%;
     }
 
     .about p{
@@ -712,8 +716,7 @@ img {
 
     /******* courses page *********************/
     .main .courses__details{
-        margin-left: 10rem;
-        margin-right: 10rem;
+        width: 100%;
     }
 
     .main .courses__details>article:nth-of-type(odd){
@@ -735,7 +738,6 @@ img {
     .yogaclass__card {
         width: 25%;
     }
-
 }
 
 /*****************************************************************
@@ -963,10 +965,6 @@ input:focus{
 }    
 
 @media only screen and (min-width: 1024px) {
-
-    .form{
-        width: 40%;
-    }
 
     .form-error{
         font-size: var(--size-form-error-md);
