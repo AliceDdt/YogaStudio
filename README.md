@@ -22,4 +22,4 @@ Languages: HTML5 / CSS3 / Javascript (for form validator, sidenav, booking cart)
 
 I used procedural PHP 
 
-I am currently finalizing CSS and Javascript to animate page
+I am currently finalizing CSS and Javascript to animate pages
