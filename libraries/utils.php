@@ -3,7 +3,6 @@
 const SECRETKEY = 'N7U29khnY';
 
 //This function returns the encrypted password  
-
 function encryptPassword($pass) {
     return openssl_encrypt($pass, "AES-128-ECB", SECRETKEY);
 }
