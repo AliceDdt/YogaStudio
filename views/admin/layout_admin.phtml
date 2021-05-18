@@ -6,16 +6,16 @@ require 'views/admin/inc_admin/head.phtml';
 <body>
     <div class="container admin ">
         <?php require 'views/admin/inc_admin/header.phtml'; ?>
-        <main class="main-content">
+        <main class="main__admin">
         <?php if (hasFlashes('error')): ?>
-            <div>
+            <div class="alert error">
                 <?php foreach (getFlashes('error') as $message): ?>
                 <p><?=$message?></p>
                 <?php endforeach?>            
             </div>
         <?php endif?>
         <?php if (hasFlashes('success')): ?>
-            <div>
+            <div class="alert success">
                 <?php foreach (getFlashes('success') as $message): ?>
                 <p><?=$message?></p>
                 <?php endforeach?>

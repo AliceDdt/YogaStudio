@@ -1,17 +1,16 @@
         <header class="header header__admin">
                 <h1 class="header__title"><a href="admin/index">Yoga Studio</a></h1>
-                <div class="btn-navbar">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                <div class="navbar__btn">
+                    <div class="btn__bar"></div>
+                    <div class="btn__bar"></div>
+                    <div class="btn__bar"></div>
                 </div>
                 <div>
                 <?php if(isset($_SESSION['user'])): ?>
                 <p><i class="fas fa-user"></i>Hello <?= ucfirst($_SESSION['user']['FirstName']); ?></p>
                 <a href="user/logout">Deconnexion</a>
                 <?php endif; ?>
-                </div>
-                
+                </div>          
         </header>
         <nav class="navbar navbar__admin">
             <ul>

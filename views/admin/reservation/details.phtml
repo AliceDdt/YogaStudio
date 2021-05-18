@@ -9,7 +9,7 @@
                             <th>Séance</th>
                             <th>Date</th>
                             <th>Heure</th>
-                            <th>Supprimer</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -20,10 +20,10 @@
                             <td><?= htmlspecialchars($item['Time']); ?></td>
                             <td>
                                 <form action="reservation/deleteBooking" method="POST">
-                                <button type="submit"><i class="far fa-trash-alt"></i></button>
-                                <input type="hidden" name="yogaclass_id" value="<?= intval($item['Yogaclass_Id']); ?>">
-                                <input type="hidden" name="resa_id" value="<?= intval($item['Id']); ?>">
-                        </form>
+                                    <button type="submit"><i class="far fa-trash-alt"></i></button>
+                                    <input type="hidden" name="yogaclass_id" value="<?= intval($item['Yogaclass_Id']); ?>">
+                                    <input type="hidden" name="resa_id" value="<?= intval($item['Id']); ?>">
+                                </form>
                             </td>           
                         </tr>
                         <?php endforeach; ?>

@@ -1,26 +1,23 @@
             <div class="content__header">
                 <h2>Gestion des types de yoga</h2>
-                <a class="btn--create" href="course/create">Créer</a>
+                <a class="btn" href="course/create">Créer</a>
             </div>
             <section>
                 <h3>Les types</h3>
                 <table class="table">
-                    <thead class="">
+                    <thead>
                         <tr>
                             <th>Nom</th>
-                            <th>Modifier</th>
-                            <th>Supprimer</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- list all courses-->
                         <?php foreach($courses as $item): ?>
                         <tr>
                             <td><?= htmlspecialchars($item['Name']); ?></td>
                             <td>
                                 <a class="btn--edit" href="course/update/<?= intval($item['Id']); ?>"><i class="fas fa-edit"></i></a>
-                            </td>
-                            <td><a class="btn--delete" href="course/deleteCourse/<?= intval($item['Id']); ?>"><i class="far fa-trash-alt"></i></a></td>
+                                <a class="btn--delete" href="course/deleteCourse/<?= intval($item['Id']); ?>"><i class="far fa-trash-alt"></i></a></td>
                         </tr>
                         <?php endforeach; ?>
                      </tbody>

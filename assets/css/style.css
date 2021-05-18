@@ -31,18 +31,19 @@
 
     --backcolor-btn: #6ea2bfc4;
     --backcolor-card: linear-gradient(62deg, #9bc9f8 0%, #e2caf8 100%);
-    
-    --border-input: 1px solid rgb(212, 212, 212);
-    --border-input-focus: rgba(10, 87, 92, 0.425);
-
-    --backcolor-input-error: rgb(235, 173, 173);
-    --border-input-error: 1px solid rgb(240, 137, 137);
+    --backcolor-input-error: #ebadad;
+    --backcolor-headerAdmin: linear-gradient(62deg, #8EC5FC 20%, #E0C3FC 50%, #D9AFD9 52%, #8EC5FC 100%);
+   
+    --border-input: 1px solid #d4d4d4;
+    --border-input-focus: #0a575c6c;
+    --border-input-error: 1px solid #f08989;
+    --border-table: 1px solid #cec5c5;
     
     --color-btn-hover: #6ea2bfc4;
     --backcolor-btn-hover: #ffff;
 
 
-    --border-btn-remove: 1px solid rgb(168, 164, 164);
+    --border-btn-remove: 1px solid #a8a4a4;
     --color-link: #000000;
     --color-icon: #000000;
     --color-text-btn : #ffff;
@@ -52,7 +53,7 @@
     --shadow-card: 1px 2px 10px #5a89b6a4;
     
     --color-disabled: #808080;
-    --backcolor-disabled: rgba(128, 128, 128, 0.178);
+    --backcolor-disabled: #8080802d;
 }
 
 
@@ -88,6 +89,10 @@ img {
     margin: 0 auto;
 }
 
+table, th, td{
+    border-collapse: collapse;
+    border: var(--border-table);
+}
 
 
 /****************************************************************************************************************************************************
@@ -98,7 +103,7 @@ img {
 .header {
     position: sticky;
     top: 0;
-    z-index: 150;
+    z-index: 15;
     box-shadow: var(--shadow);
     background-color: var(--backcolor-main);
 }
@@ -527,6 +532,15 @@ article.team__element div{
     text-align: left;
 }
 
+.hidden{
+    display: none; 
+}
+
+.cart ul{
+    list-style-type: none;
+}
+
+
 @media only screen and (min-width: 768px){
     .main{
         font-size: var(--size-text-md);
@@ -716,7 +730,7 @@ article.team__element div{
 
     /******* courses page *********************/
     .main .courses__details{
-        width: 100%;
+        width: 80%;
     }
 
     .main .courses__details>article:nth-of-type(odd){
@@ -875,32 +889,9 @@ article.team__element div{
        align-self: flex-end;
     }
 }
-/***************************************************************
-
-****************************************************************/
-.hidden{
-    display: none; 
-}
-
-.cart ul{
-    list-style-type: none;
-}
-
-.table,
-.table--responsive,
-.table--responsive th,
-.table--responsive tr,
-.table--responsive td{
-
-    border: none;
-    padding: 4em 0;
-    margin: 0 auto;
-
-}
-
 
 /*********************************************************************************************************
-FORM
+                            FORM
 ****************************************************************************************************/
 .form{
     margin: 4rem;
@@ -908,20 +899,35 @@ FORM
 
 .form fieldset{
     border: none;
-    margin: 0 auto;
 }
 
-.main .field{
+.main .field,
+.field{
     text-align: left;
-    margin-bottom: 2rem;
+    margin: 3rem auto;
+}
+
+.form div.field:last-of-type{
+    margin-bottom:5rem;
+}
+
+legend{
+    font-family: var(--font-headerTitle);
+    font-size: var(--size-title-3);
 }
 
 label,
-input{
+input,
+textarea,
+select{
     display: block;
 }
 
-input{
+input,
+textarea,
+select{
+    width:100%;
+    margin: 1rem 0;
     padding: 0.5em 1em;
     font-size: var(--size-text-md);
     border-radius: 0.2em;
@@ -951,16 +957,12 @@ input:focus{
         margin: 10rem auto;
     }
 
-    .form div:last-of-type{
-        margin-top:5rem;
+    legend{
+        font-size: var(--size-title-2);
     }
 
     label{
         margin-right: 2em;
-    }
-
-    input{
-        width: 100%;
     }
 }    
 
@@ -968,6 +970,120 @@ input:focus{
 
     .form-error{
         font-size: var(--size-form-error-md);
+    }
+}
+
+
+/*************************************************************************************
+                ALERT MESSAGES
+************************************************************************************/
+.alert.success p{
+    background-color: lightgreen;
+}
+
+.alert.error p{
+    background-color: red;
+}
+/**************************************************************************************
+***************************************************************************************
+                            ADMIN
+***************************************************************************************
+**************************************************************************************/
+.main__admin{
+    text-align: center;
+}
+
+.header__admin{
+    display: flex;
+    justify-content: space-around;
+    background: var(--backcolor-headerAdmin);
+}
+
+.navbar_admin{
+    margin-top: 10em;
+}
+
+.navbar__admin li{
+    margin-top: .2em;
+}
+
+.navbar__admin li:first-child{
+    margin-top: 0;
+}
+
+.navbar__admin ul:first-child{
+        margin-top: 5em;
+}
+
+.navbar__admin h4{
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.navbar__admin li a{
+
+    text-transform: lowercase;
+    letter-spacing: 0.3rem;
+}
+
+.btn--edit .fas{
+    position: static;
+}
+
+.content__header h2{
+    font-size: var(--size-title-3);
+    text-transform: uppercase;
+}
+.content__admin{
+    padding:1rem;
+}
+
+table.table{
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .navbar__admin ul:first-child{
+        margin-top: 6em;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    .admin {
+        display: grid;
+        grid-template-columns: 400px 8fr;
+    }
+    
+    .header__admin{
+       grid-column-start: 1;
+       grid-column-end: 3;
+    }
+    .navbar__admin{
+        margin-left: 0;
+        transition: none;
+    }
+    .navbar__admin h4{
+        margin: 2rem 0;
+    }
+
+    .navbar__admin ul{
+        display: block;
+    }
+
+    .navbar__admin li{
+        text-align: left;
+        margin-top:1em;
+    }
+    .navbar__admin li:last-child{
+        display: block;
+    }
+
+    .content__admin{
+       margin: 1rem;
     }
 
 }

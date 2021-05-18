@@ -3,9 +3,9 @@
 /******** MAIN CODING */
 document.addEventListener('DOMContentLoaded', function() {
 
-    const btnNav = document.querySelector('.btn-navbar');
+    const btnNav = document.querySelector('.navbar__btn');
     const navBar = document.querySelector('.navbar');
-    const main = document.querySelector('.main-content');
+    const main = document.querySelector('.main__admin');
     
     btnNav.addEventListener('click', function () {
         
