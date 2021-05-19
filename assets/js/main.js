@@ -1,6 +1,6 @@
 import BookingCart from './modules/BookingCart.js'
 
-/******** MAIN CODING */
+
 document.addEventListener('DOMContentLoaded', function() {
 
     let myBooking = new BookingCart();

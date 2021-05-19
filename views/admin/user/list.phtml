@@ -1,9 +1,8 @@
             <div class="content__header">
-                <h2>Gestion des membres</h2>
+                <h2>Clients</h2>
             </div>
             <section>
-                <h3>Membres</h3>
-                <table class="table">
+                <table class="table table__user">
                     <thead>
                         <tr>
                             <th>Nom</th>
@@ -18,7 +17,7 @@
                         <tr>
                             <td><?= htmlspecialchars($user['LastName']); ?></td>
                             <td><?= htmlspecialchars($user['FirstName']); ?></td>
-                            <td><?= htmlspecialchars($user['Email']); ?></td>
+                            <td><div><?= htmlspecialchars($user['Email']); ?></div></td>
                             <td><?= htmlspecialchars($user['Created_at']); ?></td>
                             <td><?= htmlspecialchars($user['Last_login']); ?></td>
                         </tr>

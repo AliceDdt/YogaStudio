@@ -52,6 +52,9 @@ function deleteBooking(){
             delete(intval($_POST['resa_id']), 'Reservation');
             addFlashMsg('success', 'Suppression réussie');
             redirect('http://localhost/yogaStudio/reservation');
+        }else{
+            addFlashMsg('success', 'Suppression réussie');
+            redirect('http://localhost/yogaStudio/reservation');
         }
     }
     else{

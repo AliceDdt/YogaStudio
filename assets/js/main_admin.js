@@ -1,6 +1,4 @@
 
-
-/******** MAIN CODING */
 document.addEventListener('DOMContentLoaded', function() {
 
     const btnNav = document.querySelector('.navbar__btn');

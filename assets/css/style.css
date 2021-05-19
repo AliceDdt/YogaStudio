@@ -976,7 +976,7 @@ input:focus{
 
 /*************************************************************************************
                 ALERT MESSAGES
-************************************************************************************/
+*************************************************************************************/
 .alert.success p{
     background-color: lightgreen;
 }
@@ -995,8 +995,14 @@ input:focus{
 
 .header__admin{
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-around;
     background: var(--backcolor-headerAdmin);
+}
+
+.header__admin .header__title{
+    width: 100%
 }
 
 .navbar_admin{
@@ -1012,7 +1018,7 @@ input:focus{
 }
 
 .navbar__admin ul:first-child{
-        margin-top: 5em;
+    margin-top: 5em;
 }
 
 .navbar__admin h4{
@@ -1021,13 +1027,12 @@ input:focus{
 }
 
 .navbar__admin li a{
-
     text-transform: lowercase;
     letter-spacing: 0.3rem;
 }
 
-.btn--edit .fas{
-    position: static;
+.btn--edit{
+   padding: 1rem;
 }
 
 .content__header h2{
@@ -1043,12 +1048,40 @@ table.table{
     margin: 0 auto;
 }
 
+.table__yogaclass th:nth-child(2),
+.table__yogaclass td:nth-child(2),
+.table__user th:nth-child(4), .table__user th:last-child,
+.table__user td:nth-child(4), .table__user td:last-child{
+    display: none;
+}
+
+.table__user div{
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
 
 @media only screen and (min-width: 768px) {
+
+    .header__admin .header__title{
+        width: 50%
+    }
 
     .navbar__admin ul:first-child{
         margin-top: 6em;
     }
+
+    .table__responsive th:nth-child(2),
+    .table__responsive td:nth-child(2),
+    .table__user th:nth-child(4), .table__user th:last-child,
+    .table__user td:nth-child(4), .table__user td:last-child{
+        display: table-cell;
+    }
+
+
 }
 
 @media only screen and (min-width: 1280px) {
@@ -1056,15 +1089,26 @@ table.table{
     .admin {
         display: grid;
         grid-template-columns: 400px 8fr;
+        grid-template-rows: 100px 1fr 1fr;
     }
     
     .header__admin{
+       display: initial;
        grid-column-start: 1;
        grid-column-end: 3;
     }
+
+    .header__admin div:last-of-type{
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+    
     .navbar__admin{
-        margin-left: 0;
+        margin-top: 4rem;
+        margin-left: 4rem;
         transition: none;
+        width: 20%;
     }
     .navbar__admin h4{
         margin: 2rem 0;
@@ -1074,16 +1118,28 @@ table.table{
         display: block;
     }
 
+    .navbar__admin ul:first-child{
+        margin-top: 0;
+    }
+
     .navbar__admin li{
         text-align: left;
         margin-top:1em;
     }
+
     .navbar__admin li:last-child{
         display: block;
+    }
+
+    .main__admin{
+        grid-column-start: 2;
+        grid-row-start: 2;
     }
 
     .content__admin{
        margin: 1rem;
     }
+    
+   
 
 }
