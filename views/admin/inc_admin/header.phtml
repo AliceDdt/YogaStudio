@@ -8,11 +8,9 @@
                 <div>
                 <?php if(isset($_SESSION['user'])): ?>
                 <p><i class="fas fa-user"></i>Hello <?= ucfirst($_SESSION['user']['FirstName']); ?></p>
-                <a href="user/logout">Deconnexion</a>
                 <?php endif; ?>
-                </div>          
-        </header>
-        <nav class="navbar navbar__admin">
+                </div>
+                <nav class="navbar navbar__admin">
             <ul>
                 <li>
                     <h4>Accueil</h4>
@@ -24,6 +22,7 @@
                     <h4>Studio</h4>
                     <ul>
                         <li><a href="reservation">Réservations</a></li>
+                        <li><a href="member">Clients</a></li>
                     </ul>
                 </li>
                 <li>
@@ -32,7 +31,6 @@
                         <li><a href="yogaclass">Planning séances</a></li>
                         <li><a href="course">Cours</a></li>
                         <li><a href="teacher">Enseignants</a></li>
-                        <li><a href="member">Utilisateurs</a></li>
                     </ul>
                 </li>
                 <li>
@@ -41,6 +39,11 @@
                         <li><a href="home/index">Yoga Studio</a></li>
                     </ul>
                 </li>
+                <?php if(isConnected()): ?>
+                    <li><a href="user/logout"><h4>deconnexion</h4></a></li>
+                <?php endif; ?>
 
             </ul>
-        </nav>
+        </nav>    
+        </header>
+        
