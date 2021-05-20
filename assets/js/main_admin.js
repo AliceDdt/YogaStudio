@@ -6,11 +6,4 @@ document.addEventListener('DOMContentLoaded', function() {
     myPage.animateSideNav();
     myPage.displayAlert('.alert');
 
-    // if(document.querySelector('.alert')){ 
-    
-    // setTimeout(function() {
-    //     document.querySelector('.alert').classList.add("hidden");
-    //   }, 3000);
-    // }
-
 });
