@@ -1,19 +1,16 @@
+import Page from './modules/Page.js'
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    const btnNav = document.querySelector('.navbar__btn');
-    const navBar = document.querySelector('.navbar');
-    const main = document.querySelector('.main__admin');
-    
-    btnNav.addEventListener('click', function () {
-        
-        navBar.classList.toggle('open');
-    });
-    
-   main.addEventListener('click', function(e){
-            navBar.classList.remove('open');
-        
-    });
+    let myPage = new Page('.navbar__btn','.navbar','.main__admin');
+    myPage.animateSideNav();
+    myPage.displayAlert('.alert');
 
+    // if(document.querySelector('.alert')){ 
+    
+    // setTimeout(function() {
+    //     document.querySelector('.alert').classList.add("hidden");
+    //   }, 3000);
+    // }
 
 });

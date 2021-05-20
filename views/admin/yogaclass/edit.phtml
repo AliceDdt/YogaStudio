@@ -5,7 +5,7 @@
                 <fieldset>
                     <div class="field">
                         <label for="yogaType">Type Yoga</label>
-                        <select name="yogaType" id="yogaType" required aria-required="true">
+                        <select name="yogaType" id="yogaType" aria-required="true">
                             <option selected="selected" disabled value="<?= intval($data['Id']); ?>"><?= htmlspecialchars($data['Name']); ?></option>
                             <?php foreach($courses as $item): ?>
                             <option value="<?= intval($item['Id']); ?>"><?= htmlspecialchars($item['Name']); ?></option>
@@ -14,7 +14,7 @@
                     </div>
                     <div class="field">
                         <label for="teacher">Enseignants</label>
-                        <select name="teacher" id="teacher" required aria-required="true"d>
+                        <select name="teacher" id="teacher" aria-required="true">
                             <option selected="selected" disabled value="<?= intval($data['Id']); ?>"><?= htmlspecialchars($data['FirstName']).' '.htmlspecialchars($data['LastName']); ?></option>
                             <?php foreach($teachers as $item): ?>
                             <option value="<?= intval($item['Id']); ?>"><?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?></option>
@@ -23,19 +23,19 @@
                     </div>
                     <div class="field">
                         <label for="date">Date</label>
-                        <input name="date" type="date" value="<?= htmlspecialchars($data['Date']); ?>" required aria-required="true">
+                        <input name="date" id="date" type="date" value="<?= htmlspecialchars($data['Date']); ?>" required>
                     </div>
                     <div class="field">
                         <label for="time">Heure</label>
-                        <input name="time" type="time" value="<?= htmlspecialchars($data['Time']); ?>" required aria-required="true">
+                        <input name="time" id="time" type="time" value="<?= htmlspecialchars($data['Time']); ?>" required>
                     </div>
                     <div class="field">
                         <label for="seat">Places</label>
-                        <input name="seat" type="number" min="1" value="<?= htmlspecialchars($data['Number_participants']); ?>" required aria-required="true">
+                        <input name="seat" id="seat" type="number" min="1" value="<?= htmlspecialchars($data['Number_participants']); ?>" aria-required="true">
                     </div>
                     <div class="field">
                         <label for="price">Prix</label>
-                        <input name="price" type="number" min="1" max="50" value="<?= htmlspecialchars($data['Price']); ?>"required aria-required="true">
+                        <input name="price" id="price" type="number" min="1" max="50" value="<?= htmlspecialchars($data['Price']); ?>" aria-required="true">
                     </div>
                 </fieldset>
                 <button class="btn" type="submit">Valider</button>

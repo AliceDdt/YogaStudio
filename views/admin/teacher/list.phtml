@@ -18,8 +18,8 @@
                             <td><?= htmlspecialchars($teacher['LastName']); ?></td>
                             <td><?= htmlspecialchars($teacher['FirstName']); ?></td>
                             <td>
-                                <a class="btn--edit" href="teacher/update/<?= intval($teacher['Id']); ?>"><i class="fas fa-edit"></i></a>
-                                <a class="btn--delete" href="teacher/deleteTeacher/<?= intval($teacher['Id']); ?>"><i class="far fa-trash-alt"></i></a>
+                                <a class="icon icon--modify" href="teacher/update/<?= intval($teacher['Id']); ?>"><i class="fas fa-edit"></i></a>
+                                <a class="icon icon--modify" href="teacher/deleteTeacher/<?= intval($teacher['Id']); ?>"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

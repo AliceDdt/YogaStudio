@@ -1,25 +1,17 @@
-    
+    <section class="dashboard">
     <div>
         <h2>dashboard</h2>
     </div>
-    <section>
-        <div>
-            <p><?= intval($booking['Booking']); ?> réservations passées sur le site</p>
+        <div class="card">
+            <div><?= intval($booking['Booking']); ?></div> 
+            <p>réservations passées sur le site</p>
         </div>
-        <div>
-            <p><?= intval($user['nb_user']); ?> membres inscrits sur le site depuis le 01/01/2021</p>
+        <div class="card">
+            <div><?= intval($user['nb_user']); ?></div>
+            <p>membres inscrits sur le site depuis le 01/01/2021</p>
         </div>
-        <div>
-            <p>Les 5 prochaines séances prévues</p>
-            <?php foreach($yogaclass as $item): ?>
-            <p><?= htmlspecialchars($item['Name']); ?></p>
-            <p><?= htmlspecialchars($item['Date']); ?></p>
-            <p><?= htmlspecialchars($item['Time']); ?></p>
-            <p><?= htmlspecialchars($item['FirstName']); ?></p>
-            <p><?= intval($item['Nb_booking']); ?> réservations</p>
-            <?php endforeach; ?>
-        </div>
-        <div>
-            <p>Type de yoga le plus réservé: <?= htmlspecialchars($course['Name']); ?></p>
+        <div class="card">
+            <p>Yoga le plus réservé:</p>
+            <div><?= htmlspecialchars($course['Name']); ?></div>
         </div>
     </section>

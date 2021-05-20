@@ -132,6 +132,7 @@ function register(){
                     $pwd_encrypted);
 
         //redirect to login.php
+        addFlashMsg('success','Compte créé <br> Veuillez vous identifier!');
         redirect('http://localhost/yogaStudio/user');
     }
     //show template
@@ -217,7 +218,7 @@ function update($userId){
                 $_SESSION['user']['Email'] = htmlspecialchars($_POST['email']);
                 
                 addFlashMsg('success', 'Mise à jour réussie !');
-                redirect('user', 'user');
+                redirect('http://localhost/yogaStudio/user');
 
             }else{
                 addFlashMsg('error', 'Un problème est survenu !');

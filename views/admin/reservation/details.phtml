@@ -3,7 +3,7 @@
             </div>
             <section>
                 <h3>Détail de la réservation n° <?= intval($id) ?></h3>
-                <table class="table">
+                <table class="table responsive">
                     <thead>
                         <tr>
                             <th>Séance</th>
@@ -16,11 +16,11 @@
                         <?php foreach($details as $item): ?>
                         <tr>
                             <td><?= htmlspecialchars($item['Name']); ?></td>
-                            <td><?= htmlspecialchars($item['Date']); ?></td>
+                            <td><div><?= htmlspecialchars($item['Date']); ?></div></td>
                             <td><?= htmlspecialchars($item['Time']); ?></td>
                             <td>
                                 <form action="reservation/deleteBooking" method="POST">
-                                    <button type="submit"><i class="far fa-trash-alt"></i></button>
+                                    <button class="icon" type="submit"><i class="far fa-trash-alt"></i></button>
                                     <input type="hidden" name="yogaclass_id" value="<?= intval($item['Yogaclass_Id']); ?>">
                                     <input type="hidden" name="resa_id" value="<?= intval($item['Id']); ?>">
                                 </form>
@@ -29,5 +29,5 @@
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <a href="reservation" class="btn">Retour</a>
+                <div><a href="reservation" class="btn">Retour</a></div>
             </section>

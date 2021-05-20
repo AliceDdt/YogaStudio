@@ -15,7 +15,6 @@
     --size-icon-md: 3rem;
     --size-title-2: 3rem;
     --size-title-3: 2rem;
-
     --size-form-error-sm: 1rem;
     --size-form-error-md: 1.2rem;
     --size-backTitle-md: 2.2rem;
@@ -28,32 +27,32 @@
     --backcolor-navbar: #c8dff7;
     --backcolor-btnNav: #000000;
     --backcolor-footer: linear-gradient(119deg, #dbe4ee 0%, #c5d7e8 19%, #c3d9e8 46%, #c9deee 69%, #d9e6ea 87%, #cee7e8 100%);
-
     --backcolor-btn: #6ea2bfc4;
     --backcolor-card: linear-gradient(62deg, #9bc9f8 0%, #e2caf8 100%);
     --backcolor-input-error: #ebadad;
     --backcolor-headerAdmin: linear-gradient(62deg, #8EC5FC 20%, #E0C3FC 50%, #D9AFD9 52%, #8EC5FC 100%);
-   
+    --backcolor-disabled: #8080802d;
+    --backcolor-btn-hover: #ffff;
+    --backcolor-success: rgba(135, 190, 135, 0.7);
+    --backcolor-error: rgba(255, 0, 0, 0.4);
+
     --border-input: 1px solid #d4d4d4;
     --border-input-focus: #0a575c6c;
     --border-input-error: 1px solid #f08989;
     --border-table: 1px solid #cec5c5;
-    
-    --color-btn-hover: #6ea2bfc4;
-    --backcolor-btn-hover: #ffff;
-
-
+    --border-success: 1px solid rgb(135, 190, 135);
+    --border-error: 1px solid rgb(255, 0, 0);
     --border-btn-remove: 1px solid #a8a4a4;
+    
+    --color-btn-hover: #6ea2bfc4; 
+    --color-disabled: #808080;
     --color-link: #000000;
     --color-icon: #000000;
     --color-text-btn : #ffff;
     --color-form-error: #f72929;
     
     --shadow: 0 0 1em #707e8ba4;
-    --shadow-card: 1px 2px 10px #5a89b6a4;
-    
-    --color-disabled: #808080;
-    --backcolor-disabled: #8080802d;
+    --shadow-card: 1px 2px 10px #5a89b6a4;  
 }
 
 
@@ -241,13 +240,13 @@ table, th, td{
 **********************************************************************************************************************/
 
 .icon{
-    position: absolute;
     font-size: var(--size-icon-sm);
     color: var(--color-icon);
     cursor: pointer;
 }
 
 .icon--cart{
+    position: absolute;
     top: 1.5em;
     right: 2.8em;
 }
@@ -258,6 +257,18 @@ table, th, td{
 
 .icon--total::after{
     content: ')';
+}
+
+/**** admin ****/
+.icon--modify{
+    padding: 1rem;
+}
+
+@media only screen and (min-width: 768px){
+
+    .icon--modify{
+        padding: 3rem;
+    }
 }
 
 @media only screen and (min-width: 1280px){
@@ -275,6 +286,10 @@ table, th, td{
         display: initial;
         top: 2em;
         right: 3.7em;
+    }
+
+    .icon--modify{
+        padding: 2rem;
     }
 }
 
@@ -352,6 +367,15 @@ table, th, td{
     transform: rotate(-45deg);
 }
 
+.arrow:hover .arrow__bar{
+    width: 5rem;
+    transform: rotate(45deg) translate(12px);
+}
+.arrow:hover .arrow__bar2{
+    width: 5rem;
+    transform: rotate(-45deg) translate(-12px);
+}
+
 @media only screen and (min-width: 768px){
     .arrow{
         padding-top: 2rem;
@@ -361,6 +385,7 @@ table, th, td{
 /**********************************************************
                     MAIN SECTIONS
 **********************************************************/
+
 .main{
     font-size: var(--size-text-sm);
     letter-spacing: var(--letter-space-text);
@@ -474,9 +499,6 @@ article.team__element div{
 
 .yogaclass__card{
     width: 70%;
-}
-
-.yogaclass__card{
     box-shadow: var(--shadow-card);
     background: var(--backcolor-card)
 }
@@ -540,7 +562,6 @@ article.team__element div{
     list-style-type: none;
 }
 
-
 @media only screen and (min-width: 768px){
     .main{
         font-size: var(--size-text-md);
@@ -551,11 +572,7 @@ article.team__element div{
     }
 
     .main section h2{
-        font-size: calc(var(--size-title-2) * 1.5);
-    }
-
-    .about p{
-        margin: 5rem;
+        font-size: calc(var(--size-title-2)*1.5);
     }
 
     .courses p{
@@ -977,17 +994,29 @@ input:focus{
 /*************************************************************************************
                 ALERT MESSAGES
 *************************************************************************************/
-.alert.success p{
-    background-color: lightgreen;
+.alert{
+    width: 50%;
+    margin: 2rem auto;
+    border-radius: 2rem;
+}
+.alert.success{
+    border: 1px solid rgb(135, 190, 135);
+    background-color: rgba(135, 190, 135, 0.7);;
 }
 
-.alert.error p{
-    background-color: red;
+.alert.error{
+    border: 1px solid rgb(255, 0, 0);
+    background-color:rgba(255, 0, 0, 0.4);
 }
+
+.alert p {
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 /**************************************************************************************
-***************************************************************************************
                             ADMIN
-***************************************************************************************
 **************************************************************************************/
 .main__admin{
     text-align: center;
@@ -1031,21 +1060,32 @@ input:focus{
     letter-spacing: 0.3rem;
 }
 
-.btn--edit{
-   padding: 1rem;
-}
-
 .content__header h2{
     font-size: var(--size-title-3);
     text-transform: uppercase;
 }
+
+.content__header h2,
+.main__admin h3{
+    margin: 5rem 2rem;
+}
+
 .content__admin{
     padding:1rem;
+}
+
+.main__admin section div:only-of-type{
+    margin: 3rem;
 }
 
 table.table{
     width: 80%;
     margin: 0 auto;
+}
+
+.table th, 
+.table td{
+    padding: 1.5rem;
 }
 
 .table__yogaclass th:nth-child(2),
@@ -1055,13 +1095,33 @@ table.table{
     display: none;
 }
 
-.table__user div{
+.table.responsive div{
     word-break: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     -o-hyphens: auto;
     hyphens: auto;
+}
+
+button.icon{
+   background-color: var(--backcolor-btn-hover);
+   border:none;
+}
+
+
+.card{
+    margin: 4rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: var(--shadow-card);
+    background: var(--backcolor-card)
+}
+.card div{
+    font-family: var(--font-headerTitle);
+    font-size: 6rem;
+    font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1081,6 +1141,22 @@ table.table{
         display: table-cell;
     }
 
+    .main__admin .form{
+        margin: 3rem auto;
+    }
+
+    .dashboard{
+        display: flex;
+        flex-wrap: wrap;
+    }
+   
+    .dashboard div:first-of-type{
+        width: 100%;
+    }
+
+    .card{
+        width: 40%;
+    }
 
 }
 
@@ -1089,7 +1165,7 @@ table.table{
     .admin {
         display: grid;
         grid-template-columns: 400px 8fr;
-        grid-template-rows: 100px 1fr 1fr;
+        grid-template-rows: 100px 1fr;
     }
     
     .header__admin{

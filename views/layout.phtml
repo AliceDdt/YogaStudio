@@ -7,14 +7,14 @@
 <?php require 'views/inc/header.phtml' ?>
         <main class="main">
         <?php if (hasFlashes('error')): ?>
-            <div>
+            <div class="alert error">
                 <?php foreach (getFlashes('error') as $message): ?>
                 <p><?=$message?></p>
                 <?php endforeach?>            
             </div>
         <?php endif?>
         <?php if (hasFlashes('success')): ?>
-            <div>
+            <div class="alert success">
                 <?php foreach (getFlashes('success') as $message): ?>
                 <p><?=$message?></p>
                 <?php endforeach?>

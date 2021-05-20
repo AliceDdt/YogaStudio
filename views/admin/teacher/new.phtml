@@ -6,44 +6,44 @@
                     <legend>Identité</legend>
                     <div class="field">
                         <label for="lastName">Nom</label>
-                        <input name="lastName" type="text" required aria-required="true">
+                        <input name="lastName" id="lastName" type="text" aria-required="true">
                     </div>
                     <div class="field">
                         <label for="firstName">Prénom</label>
-                        <input name="firstName" type="text" required aria-required="true">
+                        <input name="firstName" id="firstName" type="text" aria-required="true">
                     </div>
                     <div class="field">
                         <label for="email">Email</label>
-                        <input name="email" type="email" required aria-required="true">
+                        <input name="email" id="email" type="email" aria-required="true">
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Coordonnées</legend>
                         <div class="field">
                             <label for="address">Adresse</label>
-                            <input name="address" type="text" required aria-required="true">
+                            <input name="address" id="address" type="text" aria-required="true">
                         </div>
                         <div class="field">  
                             <label for="address2">Complément d'adresse</label>
-                            <input name="address2"  type="text">
+                            <input name="address2" id="address2" type="text">
                         </div> 
                         <div class="field">
                             <label for="zipcode">Code postal</label>
-                            <input name="zipcode" type="text" required aria-required="true">
+                            <input name="zipcode" id="zipcode" type="text" aria-required="true">
                         </div>
                         <div class="field">
                             <label for="city">Ville</label>
-                            <input name="city" type="text" required aria-required="true">
+                            <input name="city" id="city" type="text" aria-required="true">
                         </div>
                         <div class="field">
                             <label for="phone">Téléphone</label>
-                            <input name="phone" type="text" required aria-required="true">
+                            <input name="phone" id="phone" type="text" aria-required="true">
                         </div>
                 </fieldset>
                 <fieldset>
                     <legend>Photo</legend>
                     <div class="field">
-                        <input type="file" id="photo_teacher" name="photo_teacher" required aria-required="true">
+                        <input type="file" id="photo_teacher" name="photo_teacher" aria-required="true">
                         <label for="photo_teacher" data-browse="Parcourir"></label>
                     </div>
                 </fieldset>
@@ -51,7 +51,7 @@
                     <legend>Biographie</legend>
                     <div class="field">
                         <label for="bio"></label>
-                        <textarea name="bio" id="bio" cols="30" rows="10" required aria-required="true"></textarea>
+                        <textarea name="bio" id="bio" cols="30" rows="10" aria-required="true"></textarea>
                     </div>
                 </fieldset>
                 <button class="btn" type="submit">Créer</button>

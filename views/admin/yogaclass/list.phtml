@@ -1,9 +1,9 @@
             <div class="content__header">
                 <h2>Gestion des séances</h2>
-                <a class="btn" href="yogaclass/create">Créer</a>
+                <div><a class="btn" href="yogaclass/create">Créer</a></div>
             </div>
             <section>
-                <h3>Séances planifiées</h3>
+                <h3>Séances déjà planifiées</h3>
                 <table class="table table__yogaclass">
                     <thead>
                         <tr>
@@ -22,8 +22,8 @@
                         <td><?= htmlspecialchars($item['Date']); ?></td>
                         <td><?= htmlspecialchars($item['Time']); ?></td>
                         <td>
-                            <a class="btn--edit" href=yogaclass/update/<?= intval($item['Id']); ?>><i class="fas fa-edit"></i></a>
-                            <a class="btn--delete" href=yogaclass/deleteClass/<?= intval($item['Id']); ?>><i class="far fa-trash-alt"></i></a>
+                            <a class="icon icon--modify" href=yogaclass/update/<?= intval($item['Id']); ?>><i class="fas fa-edit"></i></a>
+                            <a class="icon icon--modify" href=yogaclass/deleteClass/<?= intval($item['Id']); ?>><i class="far fa-trash-alt"></i></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

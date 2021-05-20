@@ -6,20 +6,20 @@
                     <legend>Type</legend>
                     <div class="field">
                         <label for="name">Nom</label>
-                        <input name="name" type="text" required aria-required="true" value="<?= htmlspecialchars($course['Name']); ?>">
+                        <input name="name" id="name" type="text" aria-required="true" value="<?= htmlspecialchars($course['Name']); ?>">
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Description</legend>
                     <div class="field">
                         <label for="shortDescription">Description courte (page d'accueil)</label>
-                        <textarea name="shortDescription" id="shortDescription" cols="30" rows="2" required aria-required="true" ><?= htmlspecialchars($course["Short_description"]); ?></textarea>
+                        <textarea name="shortDescription" id="shortDescription" cols="30" rows="2" aria-required="true" ><?= htmlspecialchars($course["Short_description"]); ?></textarea>
                     </div>
                     <div class="field">
                         <label for="description">Description longue</label>
-                        <textarea name="description" id="description" cols="30" rows="10" required aria-required="true"><?= htmlspecialchars($course["Long_Description"]); ?></textarea>
+                        <textarea name="description" id="description" cols="30" rows="10" aria-required="true"><?= htmlspecialchars($course["Long_Description"]); ?></textarea>
                     </div>
                 </fieldset>
-                    <button  type="submit" class="btn">Valider</button>
-                    <a href="course" class="btn">Retour</a>
+                <button  type="submit" class="btn">Valider</button>
+                <a href="course" class="btn">Retour</a>
             </form>

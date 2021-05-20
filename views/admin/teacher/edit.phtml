@@ -7,38 +7,38 @@
                     <legend>Identité</legend>
                     <div class="field">
                         <label for="lastName">Nom</label>
-                        <input name="lastName" type="text" required aria-required="true" value="<?= htmlspecialchars($teacher['LastName']); ?>">
+                        <input name="lastName" id="lastName" type="text" aria-required="true" value="<?= htmlspecialchars($teacher['LastName']); ?>">
                     </div>
                     <div class="field">
                         <label for="firstName">Prénom</label>
-                        <input name="firstName" type="text" required aria-required="true" value="<?= htmlspecialchars($teacher['FirstName']); ?>">
+                        <input name="firstName" id="firstName" type="text" aria-required="true" value="<?= htmlspecialchars($teacher['FirstName']); ?>">
                     </div>
                     <div class="field">
                         <label for="email">Email</label>
-                        <input name="email" type="email" required aria-required="true" value="<?= htmlspecialchars($teacher['Email']); ?>">
+                        <input name="email" id="email" type="email" aria-required="true" value="<?= htmlspecialchars($teacher['Email']); ?>">
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Coordonnées</legend>
                     <div class="field">
                         <label for="address">Adresse</label>
-                        <input name="address" type="text" required aria-required="true" value="<?= htmlspecialchars($teacher['Address1']); ?>">
+                        <input name="address" id="address" type="text" aria-required="true" value="<?= htmlspecialchars($teacher['Address1']); ?>">
                     </div>
                     <div class="field">  
                         <label for="address2">Complément d'adresse</label>
-                        <input name="address2" type="text" value="<?= htmlspecialchars($teacher['Address2']); ?>"> 
+                        <input name="address2" id="address2" type="text" value="<?= htmlspecialchars($teacher['Address2']); ?>"> 
                     </div> 
                     <div class="field">
                         <label for="zipcode">Code postal</label>
-                        <input name="zipcode" type="text" required aria-required="true" value="<?= htmlspecialchars($teacher['ZipCode']); ?>">
+                        <input name="zipcode" id="zipcode" type="text" aria-required="true" value="<?= htmlspecialchars($teacher['ZipCode']); ?>">
                     </div>
                     <div class="field">
                         <label for="city">Ville</label>
-                        <input name="city" type="text" required aria-required="true" value="<?= htmlspecialchars($teacher['City']); ?>">
+                        <input name="city" id="city" type="text" aria-required="true" value="<?= htmlspecialchars($teacher['City']); ?>">
                     </div>
                     <div class="field">
                         <label for="phone">Téléphone</label>
-                        <input name="phone" type="text" required aria-required="true" value="<?= htmlspecialchars($teacher['Phone']); ?>">
+                        <input name="phone" id="phone" type="text" aria-required="true" value="<?= htmlspecialchars($teacher['Phone']); ?>">
                     </div>
                 </fieldset>
                 <fieldset>
@@ -52,7 +52,7 @@
                     <legend>Biographie</legend>
                     <div class="field">
                         <label for="bio"></label>
-                        <textarea name="bio" id="bio" cols="30" rows="10" required aria-required="true"><?= htmlspecialchars($teacher['Description']); ?>"</textarea>
+                        <textarea name="bio" id="bio" cols="30" rows="10" aria-required="true"><?= htmlspecialchars($teacher['Description']); ?>"</textarea>
                     </div>
                 </fieldset>
                 <button class="btn" type="submit">Valider</button>

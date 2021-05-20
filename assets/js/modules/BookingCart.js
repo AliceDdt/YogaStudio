@@ -21,7 +21,7 @@ class BookingCart {
     form = document.querySelector(this.selectorForm);
 
 
-//
+    //
     getBookingData(element){
         this.elementData = {
             id: element.dataset.id,
@@ -34,7 +34,9 @@ class BookingCart {
         return this.elementData;
     }
     
+    //add element to cart
     addBooking(){
+        //retrieve booking Cart info
         this.restore();
         this.setTotalCart();
         
@@ -43,9 +45,9 @@ class BookingCart {
             let item = this.getBookingData(element);
             
             for (const i in this.bookingCart) {
-                //test si produit dejà ajouté
+                //test if element is already in cart
                 if (this.bookingCart[i].id == item.id) {
-                    this.disabledBookingElement(element);
+                    this.disabledBookingElement(element); 
                     return;
                 }
             }

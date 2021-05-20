@@ -5,7 +5,7 @@
                     <fieldset>
                         <div class="field">
                             <label for="yogaType">Type Yoga</label>
-                            <select name="yogaType" id="yogaType" placeholder="choisir" required aria-required="true">
+                            <select name="yogaType" id="yogaType" aria-required="true">
                                 <?php foreach($courses as $item): ?>
                                 <option value="<?= intval($item['Id']); ?>"><?= htmlspecialchars($item['Name']); ?></option>
                                 <?php endforeach; ?>
@@ -13,7 +13,7 @@
                         </div>
                         <div class="field">
                             <label for="teacher">Enseignants</label>
-                            <select name="teacher" id="teacher" required aria-required="true">
+                            <select name="teacher" id="teacher" aria-required="true">
                                 <?php foreach($teachers as $item): ?>
                                 <option value="<?= intval($item['Id']); ?>"><?= htmlspecialchars($item['FirstName']).' '.htmlspecialchars($item['LastName']); ?></option>
                                 <?php endforeach; ?>
@@ -21,22 +21,22 @@
                         </div>
                         <div class="field">
                             <label for="date">Date</label>
-                            <input name="date" type="date" required aria-required="true">
+                            <input name="date" id="date" type="date" required>
                         </div>
                         <div class="field">
                             <label for="time">Heure</label>
-                            <input name="time" type="time" required aria-required="true">
+                            <input name="time" id="time" type="time" required>
                         </div>
                         <div class="field">
                             <label for="seat">Places</label>
-                            <input name="seat" type="number" min="1" required aria-required="true">
+                            <input name="seat" id="seat" type="number" min="1" aria-required="true">
                         </div>
                         <div class="field">
                             <label for="price">Prix</label>
-                            <input name="price" type="number" min="1" max="50" required aria-required="true">
+                            <input name="price" id="price" type="number" min="1" max="50" aria-required="true">
                         </div>
                     </fieldset>
                     <button class="btn" type="submit">Créer</button>
                     <a href="yogaclass" class="btn">Retour</a>
                 </form>
-            </section>
+    

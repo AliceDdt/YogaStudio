@@ -16,8 +16,8 @@
                         <tr>
                             <td><?= htmlspecialchars($item['Name']); ?></td>
                             <td>
-                                <a class="btn--edit" href="course/update/<?= intval($item['Id']); ?>"><i class="fas fa-edit"></i></a>
-                                <a class="btn--delete" href="course/deleteCourse/<?= intval($item['Id']); ?>"><i class="far fa-trash-alt"></i></a></td>
+                                <a class="icon icon--modify" href="course/update/<?= intval($item['Id']); ?>"><i class="fas fa-edit"></i></a>
+                                <a class="icon icon--modify" href="course/deleteCourse/<?= intval($item['Id']); ?>"><i class="far fa-trash-alt"></i></a></td>
                         </tr>
                         <?php endforeach; ?>
                      </tbody>

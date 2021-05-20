@@ -1,5 +1,5 @@
 import BookingCart from './modules/BookingCart.js'
-
+import Page from './modules/Page.js'
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -7,19 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     myBooking.restore();
     myBooking.setTotalCart();
 
-    const btnNav = document.querySelector('.navbar__btn');
-    const navBar = document.querySelector('.navbar');
-    const main = document.querySelector('.main');
-    
-    btnNav.addEventListener('click', function () {
-        
-        navBar.classList.toggle('open');
-    });
-    
-   main.addEventListener('click', function(e){
-            navBar.classList.remove('open');
-        
-    });
-
+    let myPage = new Page('.navbar__btn','.navbar','.main');
+    myPage.animateSideNav();
+    myPage.displayAlert('.alert');
 
 });

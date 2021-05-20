@@ -1,15 +1,15 @@
 class CustomError {
     constructor(field, message) {
-        this._fieldDom = field; //ciblage de l'input
-        this.message = message;  //le message d'erreur
+        this._fieldDom = field; //input target
+        this.message = message;  //error message
     }
     
-    //getter du ciblage de l'input
+    //input getter 
     get fieldDom() {
         return this._fieldDom;
     }
     
-    //renvoie l'objet span à insérer
+    //returns error message
     getDomError() {
         const spanDom = document.createElement('span');
         spanDom.classList.add('form-error');

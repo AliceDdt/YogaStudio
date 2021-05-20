@@ -131,24 +131,3 @@ function nbSeatsLeft(int $id)
     $query->execute([':id' => $id]);
     return $query->fetch(PDO::FETCH_ASSOC);
 }
-
-
-/*
-This function retrieves the 5 next yogaclasses for the admin dashboard
-@returns array
-*/
-function findyogaClassesAdmin(): array
-{
-    $pdo = dbConnexion();
-    $query = $pdo->prepare(
-        "SELECT DATE_FORMAT(Yogaclass.Date, '%d/%m/%Y') as Date, DATE_FORMAT(Yogaclass.Time, '%H:%i') as Time, Yogaclass.Nb_booking, Course.Name as Name, User.FirstName
-        FROM Yogaclass
-        INNER JOIN Course ON Course.Id = Yogaclass.Course_Id
-        INNER JOIN User ON User.Id = Yogaclass.User_Id
-        WHERE Yogaclass.Date > NOW() 
-        ORDER BY Yogaclass.Date ASC
-        LIMIT 5");
-    
-    $query->execute();
-    return $query->fetchAll(PDO::FETCH_ASSOC);
-}

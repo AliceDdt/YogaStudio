@@ -86,7 +86,7 @@ function addFlashMsg(string $type, string $message)
     }
 
 /* 
-function verify if $_SESSION['messages'] is empty or not
+function verify if $_SESSION['messages'][$type] is empty 
 @params string $type
 @returns bool
 */
