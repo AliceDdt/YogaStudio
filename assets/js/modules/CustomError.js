@@ -9,7 +9,7 @@ class CustomError {
         return this._fieldDom;
     }
     
-    //returns error message
+    //returns error message 
     getDomError() {
         const spanDom = document.createElement('span');
         spanDom.classList.add('form-error');
