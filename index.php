@@ -49,7 +49,7 @@ try{
             }
         }
     }else{
-        redirect('http://localhost/projet_mvc/home/index');
+        redirect('http://localhost/yogaStudio/home/index');
     }
 }
 catch(Exception $e) { // S'il y a eu une erreur, alors...
